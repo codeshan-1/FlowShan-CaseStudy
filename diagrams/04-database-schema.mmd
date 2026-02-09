@@ -1,0 +1,34 @@
+erDiagram
+    USER ||--o{ CLIENT : manages
+    CLIENT ||--o{ PROJECT : owns
+    PROJECT ||--o{ TASK : contains
+    TASK ||--o{ SUBTASK : includes
+    
+    USER {
+        string id PK
+        string email
+        string name
+    }
+    CLIENT {
+        string id PK
+        string userId FK
+        string name
+    }
+    PROJECT {
+        string id PK
+        string clientId FK
+        string title
+        string status
+    }
+    TASK {
+        string id PK
+        string projectId FK
+        string title
+        string priority
+    }
+    SUBTASK {
+        string id PK
+        string taskId FK
+        string title
+        boolean completed
+    }

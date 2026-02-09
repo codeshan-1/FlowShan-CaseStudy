@@ -1,0 +1,38 @@
+# 02 Data Synchronization Strategy
+
+```mermaid
+sequenceDiagram
+    participant LS as 💾 LocalStorage
+    participant SE as 🔄 Sync Engine
+    participant API as 📡 REST API
+    participant DB as 🏠 Database
+
+    Note over LS, DB: Phase 1: Client Synchronization
+    SE->>LS: Get local-clients
+    LS-->>SE: Array[Client]
+    loop Each Client
+        SE->>API: POST /api/clients
+        API->>DB: create(client)
+        DB-->>API: New UUID
+        API-->>SE: New UUID
+        SE->>SE: Map: LocalID -> NewUUID
+    end
+
+    Note over LS, DB: Phase 2: Project Inheritance
+    SE->>LS: Get local-projects
+    LS-->>SE: Array[Project]
+    loop Each Project
+        SE->>SE: Update ClientID from Map
+        SE->>API: POST /api/projects
+        API->>DB: create(project)
+        DB-->>API: New ProjectUUID
+        API-->>SE: New ProjectUUID
+        SE->>SE: Map: LocalProjectID -> ProjectUUID
+    end
+
+    Note over LS, DB: Phase 3: Cleanup
+    SE->>LS: Clear flowshan-* keys
+```
+
+### Story: Maintaining Relationship Integrity
+The most critical part of the sync is not just moving data, but **preserving relationships**. By mapping old IDs to new UUIDs in memory during the process, we ensure that a Task created locally still knows which Project it belongs to once they both live on the server.

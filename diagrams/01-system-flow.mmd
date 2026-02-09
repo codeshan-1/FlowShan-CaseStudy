@@ -1,0 +1,30 @@
+# 01 System Flow Diagram
+
+```mermaid
+graph TD
+    %% Define Styles
+    classDef glass stroke:#00e5ff,stroke-width:2px,fill:#12121a,color:#ffffff
+    classDef neon stroke:#9c27b0,stroke-width:2px,fill:#12121a,color:#ffffff
+
+    %% Nodes
+    A["🌐 Web Browser (Guest)"]:::glass
+    B["💾 LocalStorage (Offline Storage)"]:::glass
+    C["🔐 Auth Provider (Login)"]:::neon
+    D["🔄 Sync Engine (sync-service.ts)"]:::neon
+    E["🏠 PostgreSQL Database (Cloud)"]:::neon
+
+    %% Flow
+    A -->|Immediate Read/Write| B
+    B -->|Persist Guest Data| B
+    A -->|Trigger Login| C
+    C -->|Return JWT| D
+    B -->|Extract Local Data| D
+    D -->|Map Local IDs to UUIDs| D
+    D -->|Atomic Batch Sync| E
+    E -->|Confirmation| D
+    D -->|Clear LocalStorage| B
+    A -->|Live Production View| E
+```
+
+### Story: The Guest Discovery Phase
+The diagram above represents the "Zero Friction" journey. A user lands on FlowShan, interacts with the Kanban board immediately (Guest Phase), and only when they decide to commit, the **Sync Engine** wakes up to bridge their local world to the cloud.

@@ -1,0 +1,22 @@
+graph TD
+    subgraph "Core Layout"
+        A[Root Layout] --> B[Sidebar]
+        A --> C[Main Stage]
+    end
+
+    subgraph "Kanban Modules"
+        C --> D[Task Board]
+        D --> E[Board Column]
+        E --> F[Task Card]
+        F --> G[Subtask List]
+    end
+
+    subgraph "View Panels"
+        C --> H[Client View]
+        C --> I[Project View]
+        C --> J[Settings Panel]
+    end
+
+    style A fill:#12121a,stroke:#00e5ff,stroke-width:2px,color:#fff
+    style D fill:#12121a,stroke:#9c27b0,stroke-width:2px,color:#fff
+    style F fill:#12121a,stroke:#00e5ff,stroke-width:2px,color:#fff
