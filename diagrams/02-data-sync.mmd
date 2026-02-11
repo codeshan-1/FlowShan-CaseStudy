@@ -2,37 +2,47 @@
 
 ```mermaid
 sequenceDiagram
+    participant User
     participant LS as 💾 LocalStorage
     participant SE as 🔄 Sync Engine
     participant API as 📡 REST API
     participant DB as 🏠 Database
 
-    Note over LS, DB: Phase 1: Client Synchronization
-    SE->>LS: Get local-clients
-    LS-->>SE: Array[Client]
-    loop Each Client
-        SE->>API: POST /api/clients
-        API->>DB: create(client)
-        DB-->>API: New UUID
-        API-->>SE: New UUID
-        SE->>SE: Map: LocalID -> NewUUID
-    end
+    Note over User, DB: Phase 1: Authentication & Discovery
+    User->>LS: Saves Project & Tasks (Guest)
+    User->>API: Login(Google/Email)
+    API-->>User: JWT & UserID
 
-    Note over LS, DB: Phase 2: Project Inheritance
-    SE->>LS: Get local-projects
-    LS-->>SE: Array[Project]
-    loop Each Project
-        SE->>SE: Update ClientID from Map
-        SE->>API: POST /api/projects
-        API->>DB: create(project)
-        DB-->>API: New ProjectUUID
-        API-->>SE: New ProjectUUID
-        SE->>SE: Map: LocalProjectID -> ProjectUUID
-    end
+    Note over User, DB: Phase 2: Client & Project Sync
+    SE->>LS: getLocalClients()
+    SE->>API: POST /api/sync/clients (Batch)
+    API->>DB: createMany(clients)
+    DB-->>API: New Client UUIDs {oldId: newId}
+    API-->>SE: Map {clientMap}
 
-    Note over LS, DB: Phase 3: Cleanup
-    SE->>LS: Clear flowshan-* keys
+    SE->>LS: getLocalProjects()
+    SE->>SE: mapClientIds(projects, clientMap)
+    SE->>API: POST /api/sync/projects (Batch)
+    API->>DB: createMany(projects)
+    DB-->>API: New Project UUIDs {oldId: newId}
+    API-->>SE: Map {projectMap}
+
+    Note over User, DB: Phase 3: Tasks, Subtasks & Notes
+    SE->>LS: getLocalTasks()
+    SE->>SE: mapProjectIds(tasks, projectMap)
+    SE->>API: POST /api/sync/tasks (Batch)
+    API->>DB: createMany(tasks_with_subtasks)
+    DB-->>API: New Task UUIDs
+    
+    SE->>LS: getLocalNotes()
+    SE->>SE: mapGroupIds(notes, clientMap, projectMap)
+    SE->>API: POST /api/sync/notes (Batch)
+    API->>DB: createMany(notes)
+    
+    Note over User, DB: Phase 4: Finalization
+    SE->>LS: Clear Synced Data
+    API-->>User: Success (Reload Dashboard)
 ```
 
-### Story: Maintaining Relationship Integrity
-The most critical part of the sync is not just moving data, but **preserving relationships**. By mapping old IDs to new UUIDs in memory during the process, we ensure that a Task created locally still knows which Project it belongs to once they both live on the server.
+### Story: Maintaining Referential Integrity
+The most critical part of the sync is not just moving data, but **preserving relationships**. By mapping old local IDs (cuid-like) to new PostgreSQL UUIDs in memory during the process, we ensure that a Task created locally as "Task A" belonging to "Project X" is correctly re-assigned to the *newly created* "Project X" on the server.

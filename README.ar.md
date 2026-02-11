@@ -6,177 +6,107 @@
 </p>
 
 <div align="center">
-<!-- Animated Title -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=36&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FlowShan+Case+Study;Glassmorphism+SaaS;Local-First+Architecture" alt="FlowShan"/>
+<!-- Title Branding -->
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=40&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FLOWSHAN;منصة+الإنتاجية+الذكية" alt="FlowShan Logo"/>
 </div>
 
 <br/>
 
-<h3 align="center">💎 تجربة الإنتاجية السينمائية</h3>
-<p align="center"><b>نظام إدارة مهام (Kanban) متطور يجمع بين هندسة البيانات المحلية (Local-first) وجمالية الـ Glassmorphism الفاخرة.</b></p>
+<blockquote align="center">
+  <b>"أدوات الإنتاجية يجب أن تكون ملهمة. زمن استجابة صفري، تصميم زجاجي، ومزامنة محلية أولاً."</b>
+</blockquote>
 
-<p align="center">
-  <a href="https://github.com/codeshan/flowshan">
-    <img src="https://img.shields.io/badge/🌐_العرض_الحي-قريباً-00E5FF?style=for-the-badge"/>
+---
+
+<!-- Live Demo Button -->
+<div align="center">
+<p>
+  <a href="https://flowshan.vercel.app" target="_blank">
+    <img src="https://img.shields.io/badge/تجربة_حية-00E5FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
   </a>
-  <a href="#-القرارات-التقنية">
-    <img src="https://img.shields.io/badge/📖_سجل_القرارات-استكشف-9C27B0?style=for-the-badge"/>
+  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank">
+    <img src="https://img.shields.io/badge/كود_المشروع-12121a?style=for-the-badge&logo=github&logoColor=white" alt="Github Repo" />
   </a>
 </p>
 
-<div align="center">
-![FlowShan Hero](assets/banners/main-hero.png)
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
 </div>
 
-<br/>
+## 📸 المعرض البصري (إثباتات العمل)
 
-<!-- Professional Badge Layout -->
-<table align="center" style="border: none; background: transparent;">
-  <tr style="border: none; background: transparent;">
-    <td style="border: none; padding: 5px;">
-      <a href="#"><img src="https://img.shields.io/badge/Next.js_16-101020?style=flat-square&logo=next.js" height="20" /></a>
-    </td>
-    <td style="border: none; padding: 5px;">
-      <a href="#"><img src="https://img.shields.io/badge/Prisma_7-12121a?style=flat-square&logo=prisma" height="20" /></a>
-    </td>
-    <td style="border: none; padding: 5px;">
-      <a href="#"><img src="https://img.shields.io/badge/Tailwind_4-00e5ff?style=flat-square&logo=tailwind-css" height="20" /></a>
-    </td>
-    <td style="border: none; padding: 5px;">
-      <a href="#"><img src="https://img.shields.io/badge/Sync-Local_First-9c27b0?style=flat-square" height="20" /></a>
-    </td>
+<table align="center" dir="rtl">
+  <tr>
+    <td align="center"><b>لوحة التحكم الحية (Bento Grid)</b></td>
+    <td align="center"><b>تكامل تيليجرام والمزامنة الفورية</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/banners/visual-dashboard.png" width="400" style="border-radius: 10px;"/></td>
+    <td><img src="assets/banners/visual-telegram-sync.png" width="400" style="border-radius: 10px;"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>سير عمل Kanban (سحب وإفلات)</b></td>
+    <td align="center"><b>استجابة كاملة للهواتف المحمولة</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/banners/visual-kanban.png" width="400" style="border-radius: 10px;"/></td>
+    <td><img src="assets/banners/visual-mobile.png" width="400" style="border-radius: 10px;"/></td>
   </tr>
 </table>
 
 ---
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## ⚡ تميز الأداء (Performance)
 
-## ⚠️ ملحوظة هامة
-> [!IMPORTANT]
-> **هذا المستودع هو دراسة حالة تقنية (Case Study) لمشروع FlowShan.**
-> الهدف هو توثيق الرحلة الهندسية، الأنماط المعمارية، وفلسفة التصميم خلف التطبيق. الكود المصدري الكامل للمشروع خاص وغير متاح للعامة.
+<div align="center">
+  <table align="center" dir="rtl">
+    <tr>
+      <td align="center"><b>تقرير Lighthouse (100/100)</b></td>
+      <td align="center"><b>إشعارات فورية (Push Notifications)</b></td>
+    </tr>
+    <tr>
+      <td><img src="assets/banners/performance-lighthouse.png" width="400" style="border-radius: 10px;"/></td>
+      <td><img src="assets/banners/visual-push-notifs.png" width="400" style="border-radius: 10px;"/></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-## 📽️ نظرة عامة على المشروع
-
-تم بناء **FlowShan** بناءً على رؤية بسيطة: أدوات الإنتاجية غالباً ما تبدو كجداول بيانات معقدة. أردت بناء شيء يبدو **عضوياً، خفيفاً، وسينمائياً**.
-
-من خلال دمج **الـ Glassmorphism** (الشفافية والضبابية) مع استراتيجية **المزامنة المحلية أولاً (Local-First)**، يوفر FlowShan تجربة مستخدم سريعة للغاية تبدو فاخرة على أي جهاز.
-
-### 🎯 لماذا هذه المعمارية؟
-عند بناء FlowShan، واجهت خياراً: تطبيق تقليدي يعتمد كلياً على السيرفر، أو نهج أكثر مرونة يعتمد على البيانات المحلية أولاً. اخترت الأخير.
-
-| الميزة | النهج التقليدي | فلو شان (Local-First) |
-|:---:|:---:|:---:|
-| **زمن الاستجابة** | يعتمد على الشبكة | **فوري (قراءة محلية)** |
-| **العمل بدون إنترنت** | أخطاء في التحميل | **دعم كامل** |
-| **دخول المستخدمين** | يتطلب تسجيل دخول | **مزامنة ذكية للضيوف** |
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-## 🏗️ الهندسة التقنية (Architecture)
-
-<div align="center">
-  <img src="assets/banners/system-diagram.png" width="600" style="border-radius: 20px;"/>
-</div>
-
-### 🌌 مجرة التقنيات (Technology Galaxy)
+## 🛠️ مجرة التقنيات (Tech Stack)
 
 <div align="center">
 
-**🌟 اللب البرمجي (Core)**
-<p>
-<img src="https://img.shields.io/badge/Next.js_16-101020?style=for-the-badge&logo=next.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/React_19-00e5ff?style=for-the-badge&logo=react&logoColor=white"/>
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/Tailwind_4-00e5ff?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-</p>
-
-**🌀 البيانات والباك-إند (Data & Backend)**
-<p>
-<img src="https://img.shields.io/badge/PostgreSQL-101020?style=for-the-badge&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/Prisma_7-12121a?style=for-the-badge&logo=prisma"/>
-<img src="https://img.shields.io/badge/Jose_JWT-00e5ff?style=for-the-badge&logo=json-web-tokens"/>
-<img src="https://img.shields.io/badge/Zustand-9c27b0?style=for-the-badge"/>
-</p>
-
-**🎬 تجربة المستخدم (UX)**
-<p>
-<img src="https://img.shields.io/badge/Framer_Motion-af4fda?style=for-the-badge&logo=framer&logoColor=white"/>
-<img src="https://img.shields.io/badge/Lucide_Icons-00e5ff?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Next_Intl-9c27b0?style=for-the-badge"/>
-</p>
+| **الطبقة** | **التقنيات المستخدمة** |
+|:---:|:---|
+| **الأساس** | ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
+| **التصميم** | ![TailwindCSS](https://img.shields.io/badge/Tailwind_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) |
+| **المنطق** | ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-orange?style=flat-square) ![Jose](https://img.shields.io/badge/Jose_JWT-black?style=flat-square) |
+| **البيئة** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
 
 </div>
 
 ---
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## 📂 تحليل عميق: دراسة الحالة (10 أجزاء)
 
-### 🔄 منطق المزامنة (Local-to-Cloud Sync)
-يستخدم FlowShan محرك مزامنة غير حاصر. يمكن للمستخدمين البدء فوراً كـ "ضيوف". وعند تسجيل الدخول، تبدأ عملية المزامنة عبر 4 مراحل:
-1. **خرائط الهوية**: ربط المعرفات المحلية بمعرفات UUID في قاعدة البيانات.
-2. **توريث المشاريع**: نقل المشاريع المحلية مع الحفاظ على علاقاتها البرمجية.
-3. **الدفع الذري**: رفع البيانات عبر معاملات (Transactions) تضمن سلامتها.
-4. **التنظيف**: مسح البيانات المحلية فقط بعد التأكد من نجاح الرفع بنسبة 100%.
+لتحليل هندسي معمق، استكشف باقة التوثيق الكاملة:
 
-<br/>
-
-<div align="center">
-  <img src="assets/banners/sync-timeline.png" width="600" style="border-radius: 20px;"/>
-</div>
+1. [**01-نظرة عامة**](docs/01-Overview.ar.md) - رؤية المشروع والأثر.
+2. [**02-تحديد المشكلة**](docs/02-Problem-Statement.ar.md) - الاحتكاك والإرهاق البصري.
+3. [**03-هندسة الحلول**](docs/03-Solution-Architecture.ar.md) - محرك المزامنة ثلاثي الطبقات.
+4. [**04-الميزات الجوهرية**](docs/04-Key-Features.ar.md) - التصميم الزجاجي والمحلية أولاً.
+5. [**05-القرارات التقنية**](docs/05-Technical-Decisions.ar.md) - سجل القرارات الهندسية (ADR).
+6. [**06-التحديات والحلول**](docs/06-Challenges-Solutions.ar.md) - معالجة خرائط التبعيات.
+7. [**07-تحسين الأداء**](docs/07-Performance-Optimization.ar.md) - حجم الحزمة وفلسفة الـ Hydration.
+8. [**08-الجودة والاختبار**](docs/08-Testing-Quality.ar.md) - أنظمة التحقق التلقائي.
+9. [**09-النشر والعمليات**](docs/09-Deployment-DevOps.ar.md) - وظائف الحافة والـ CI/CD.
+10. [**10-النتائج والنتائج النهائي**](docs/10-Results-Impact.ar.md) - النتائج النهائية والأثر.
 
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-## 💡 التنازلات والحلول البديلة (Trade-offs)
-
-### 1. لماذا الحل المخصص للمزامنة بدلاً من TanStack Query؟
-بينما يعتبر TanStack Query ممتازاً للتخزين المؤقت، إلا أن متطلبات "الضيف أولاً" كانت تفرض وجود طبقة بيانات تعيش خارج دورة حياة التطبيق المعتادة. بناء `sync-service` مخصص أتاح تحكماً دقيقاً في هجرة البيانات أثناء أول عملية تسجيل دخول.
-
-### 2. لماذا Tailwind 4 والـ Glassmorphism؟
-أداء Tailwind 4 المحسن والاعتماد على متغيرات CSS جعله مثالياً لنظام تصميم يعتمد على الشفافية المتغيرة ومرشحات الضعف (Blur filters). رفضت استخدام مكتبات UI الجاهزة لأنها تفرض تصاميم "معتمة" (Opaque) تكسر جمالية الزجاج.
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-## 📊 النتائج والأثر
-- **استجابة فورية**: زمن الاستجابة للتفاعلات أقل من 16 جزء من الثانية (محلياً).
-- **سهولة الاستخدام**: وصول كامل للميزات بنسبة 100% للمستخدمين مجهولي الهوية.
-- **التصميم**: بناء نظام بصري موحد للزجاج عبر أكثر من 20 مكوناً تقنياً.
-
----
-
-## 📖 استكشف المزيد
-
-- [القرارات التقنية (ADR)](docs/05-Technical-Decisions.md)
-- [README (English)](README.md)
-- [الرسوم التوضيحية (Diagrams)](diagrams/01-system-flow.mmd)
-- [برمجياً: هيكل المكونات](assets/banners/component-hierarchy.png)
-- [برمجياً: مخطط قاعدة البيانات](assets/banners/db-schema.png)
-
----
-
-<div align="center">
-  تم البناء بحب 💜 بواسطة <b>CodeShan</b>
-  <br/>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,14,16,18,20&height=100&section=footer"/>
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
+  <p>© 2026 <b>CODESHAN</b> | MIT License</p>
 </div>
 
 </div>

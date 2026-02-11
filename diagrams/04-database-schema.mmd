@@ -1,34 +1,74 @@
 erDiagram
+    %% Core Users & Auth
     USER ||--o{ CLIENT : manages
-    CLIENT ||--o{ PROJECT : owns
-    PROJECT ||--o{ TASK : contains
-    TASK ||--o{ SUBTASK : includes
+    USER ||--o{ PROJECT : owns
+    USER ||--o{ TASK : created
+    USER ||--o{ NOTE : keeps
+    USER ||--o{ PROJECT_TEMPLATE : defines
+    USER ||--o{ PUSH_SUBSCRIPTION : subscribes
     
+    %% Hierarchy
+    CLIENT ||--o{ PROJECT : has
+    CLIENT ||--o{ NOTE : linked_to
+    
+    PROJECT ||--o{ TASK : contains
+    PROJECT ||--o{ NOTE : linked_to
+    
+    TASK ||--o{ SUBTASK : includes
+    TASK ||--o{ NOTE : linked_to
+    
+    %% Definitions
     USER {
         string id PK
         string email
-        string name
+        string googleId
+        string anonymousId
+        boolean notifyEmail
+        boolean notifyBrowser
     }
+
     CLIENT {
         string id PK
-        string userId FK
         string name
+        string slug
+        date deletedAt
     }
+
     PROJECT {
         string id PK
-        string clientId FK
-        string title
-        string status
+        string name
+        enum status
+        enum priority
+        date deadline
+        string shareToken
+        boolean shareEnabled
     }
+
     TASK {
         string id PK
-        string projectId FK
         string title
-        string priority
+        enum status
+        enum priority
+        date deadline
+        int duration
+        date focusDate
     }
+
     SUBTASK {
         string id PK
-        string taskId FK
         string title
-        boolean completed
+        boolean isCompleted
+    }
+
+    NOTE {
+        string id PK
+        string title
+        string content
+        boolean isPinned
+    }
+
+    PROJECT_TEMPLATE {
+        string id PK
+        string name
+        json taskBlueprints
     }
