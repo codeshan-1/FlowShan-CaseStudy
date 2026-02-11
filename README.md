@@ -1,210 +1,96 @@
 <div align="center">
 
-<!-- Language Switcher -->
 <p align="right">
-  <a href="README.ar.md">العربية</a>
-</p>
-
-<!-- Title Branding -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=40&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FLOWSHAN;SaaS+Productivity+Suite" alt="FlowShan Logo"/>
-
-<br/>
-
-> **"Productivity tools should be inspiring. Zero-latency, Glassmorphism, and Local-First sync."**
-
----
-
-<!-- Live Demo Button -->
-<p align="center">
-  <a href="https://flowshan.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Live_Demo-00E5FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
-  </a>
-  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank">
-    <img src="https://img.shields.io/badge/Github_Repo-12121a?style=for-the-badge&logo=github&logoColor=white" alt="Github Repo" />
+  <a href="README.ar.md">
+    <img src="https://img.shields.io/badge/Read_in-Arabic-00E5FF?style=for-the-badge&labelColor=0B1020" alt="Arabic"/>
   </a>
 </p>
 
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
+<img src="assets/banners/main-hero.png" alt="FlowShan Hero" width="100%"/>
+
+# FlowShan Case Study
+### Local-First Productivity Platform with Cinematic UX
+
+<p>
+  <a href="https://flowshan.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Live_Demo-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020" alt="Live Demo"/></a>
+  <a href="https://github.com/codeshan/flowshan" target="_blank"><img src="https://img.shields.io/badge/Main_App-12121A?style=for-the-badge&logo=github&logoColor=white" alt="Main Repo"/></a>
+  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank"><img src="https://img.shields.io/badge/Case_Study-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
+</p>
 
 </div>
 
-## 📸 Visual Gallery (The Proof)
+## Case Study Snapshot
+| Area | Summary |
+|---|---|
+| Product | SaaS productivity app for projects, tasks, clients, notes, calendar |
+| Core Bet | Local-first interactions, cloud sync on auth |
+| UX Direction | Glassmorphism + motion + bilingual (EN/AR RTL) |
+| Stack | Next.js 16, React 19, TypeScript, Tailwind 4, Zustand, Prisma, PostgreSQL |
+| Outcome | Fast perceived UX, clean sync model, professional visual identity |
 
-<table align="center">
-  <tr>
-    <td align="center"><b>Live Dashboard (Bento Grid)</b></td>
-    <td align="center"><b>Kanban Flow (Drag & Drop)</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/screenshots/dashboard-hero.png" width="400" style="border-radius: 10px;"/></td>
-    <td><img src="assets/screenshots/kanban-board.png" width="400" style="border-radius: 10px;"/></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Interactive Calendar 3.0</b></td>
-    <td align="center"><b>Cinematic Notes Editor</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/screenshots/calendar-heatmap.png" width="400" style="border-radius: 10px;"/></td>
-    <td><img src="assets/screenshots/notes-editor.png" width="400" style="border-radius: 10px;"/></td>
-  </tr>
-  <tr>
-    <td align="center"><b>Full Mobile Responsiveness</b></td>
-    <td align="center"><b>Telegram & Real-time Sync</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/screenshots/mobile-dashboard.png" width="400" style="border-radius: 10px;"/></td>
-    <td><img src="assets/banners/visual-telegram-sync.png" width="400" style="border-radius: 10px;"/></td>
-  </tr>
-</table>
+## Why This Project Exists
+Most task tools are either visually dull or interaction-heavy with network latency.  
+FlowShan was built to prove both can coexist: premium look + near-instant interaction.
 
----
+## What Was Recently Improved
+- Projects page empty-state UX was formalized:
+  - dedicated first-project prompt when there are zero projects.
+  - explicit "no results" state when filters/search return empty.
+- Notes empty-state CTA alignment was fixed for consistent icon+label layout across breakpoints.
 
-## 🏗️ System Architecture
-
-The following diagram illustrates the **Hybrid Sync Engine**, managing state between LocalStorage (Guest) and PostgreSQL (Auth) with optimistic UI updates.
-
-```mermaid
-graph TD
-    %% Define Styles
-    classDef glass stroke:#00e5ff,stroke-width:2px,fill:#12121a,color:#ffffff
-    classDef neon stroke:#9c27b0,stroke-width:2px,fill:#1b1b2f,color:#e0e0e0
-    classDef action stroke:#22d3ee,stroke-width:1px,fill:#0f172a,stroke-dasharray: 5 5,color:#9ca3af
-
-    %% Nodes
-    User(("👤 User")):::glass
-    
-    subgraph "Frontend (Next.js)"
-        UI[Glass UI Interface]:::glass
-        DND[Drag & Drop Engine]:::action
-        State[Zustand Store]:::action
-    end
-    
-    subgraph "Data Layer"
-        LS[LocalStorage (Guest)]:::glass
-        API[Next.js API Routes]:::neon
-        DB[(PostgreSQL)]:::neon
-    end
-
-    %% Flow
-    User -->|Interacts| UI
-    UI -->|Drag Task| DND
-    DND -->|Optimistic Update| State
-    State -->|Persist| LS
-    
-    %% Sync Flow
-    User -->|Login| API
-    LS -->|Sync Data| API
-    API -->|Batch Insert| DB
-    DB -->|New UUIDs| API
-    API -->|Hydrate| State
-    
-    %% Real-time
-    DB -.->|Cron: Deadlines| User
-```
-
-## 💾 Database Schema
-
-A robust, relational schema designed for multi-tenancy and complex project hierarchies.
-
-```mermaid
-erDiagram
-    %% Core Users & Auth
-    USER ||--o{ CLIENT : manages
-    USER ||--o{ PROJECT : owns
-    USER ||--o{ TASK : created
-    USER ||--o{ NOTE : keeps
-    
-    %% Hierarchy
-    CLIENT ||--o{ PROJECT : has
-    PROJECT ||--o{ TASK : contains
-    TASK ||--o{ SUBTASK : includes
-    
-    %% Relations
-    PROJECT ||--o{ NOTE : linked_to
-    CLIENT ||--o{ NOTE : linked_to
-
-    USER {
-        string id PK
-        string email
-        string googleId
-        boolean notifyEmail
-    }
-
-    PROJECT {
-        string id PK
-        string name
-        enum status
-        date deadline
-        boolean shareEnabled
-    }
-
-    TASK {
-        string id PK
-        string title
-        enum priority
-        date deadline
-        int duration
-    }
-
-    NOTE {
-        string id PK
-        string title
-        boolean isPinned
-    }
-```
-
----
-
-## ⚡ Performance Excellence
-
+## Visual Proof
 <div align="center">
-  <table align="center">
-    <tr>
-      <td align="center"><b>Lighthouse Audit (100/100)</b></td>
-      <td align="center"><b>Immediate Push Notifications</b></td>
-    </tr>
-    <tr>
-      <td><img src="assets/banners/performance-lighthouse.png" width="400" style="border-radius: 10px;"/></td>
-      <td><img src="assets/banners/visual-push-notifs.png" width="400" style="border-radius: 10px;"/></td>
-    </tr>
-  </table>
+  <img src="assets/screenshots/dashboard-hero.png" width="48%" alt="Dashboard"/>
+  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban"/>
+  <img src="assets/screenshots/calendar-heatmap.png" width="48%" alt="Calendar"/>
+  <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes"/>
 </div>
 
----
-
-## 🛠️ Technology Galaxy
-
+## Architecture & System View
 <div align="center">
-
-| **Layer** | **Technologies** |
-|:---:|:---|
-| **Core** | ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
-| **Styles** | ![TailwindCSS](https://img.shields.io/badge/Tailwind_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) |
-| **Logic** | ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-orange?style=flat-square) ![Jose](https://img.shields.io/badge/Jose_JWT-black?style=flat-square) |
-| **Infra** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
-
+  <img src="assets/banners/system-diagram.png" width="49%" alt="System Diagram"/>
+  <img src="assets/banners/sync-timeline.png" width="49%" alt="Sync Timeline"/>
 </div>
 
----
+## Reading Tracks
+### Recruiter / Hiring Manager (10-15 min)
+1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
+2. <a href="docs/01-Overview.md"><b>01 - Overview</b></a>
+3. <a href="docs/04-Key-Features.md"><b>04 - Key Features</b></a>
+4. <a href="docs/10-Results-Impact.md"><b>10 - Results & Impact</b></a>
 
-## 📂 Deep Dive: 10-Part Case Study
+### Tech Lead / Senior Engineer (25-40 min)
+1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
+2. <a href="docs/02-Problem-Statement.md"><b>02 - Problem Statement</b></a>
+3. <a href="docs/03-Solution-Architecture.md"><b>03 - Solution Architecture</b></a>
+4. <a href="docs/05-Technical-Decisions.md"><b>05 - Technical Decisions</b></a>
+5. <a href="docs/06-Challenges-Solutions.md"><b>06 - Challenges & Solutions</b></a>
+6. <a href="docs/07-Performance-Optimization.md"><b>07 - Performance Optimization</b></a>
+7. <a href="docs/08-Testing-Quality.md"><b>08 - Testing & Quality</b></a>
 
-For in-depth architectural analysis, explore the documentation suite:
+### Product / Stakeholder (15-20 min)
+1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
+2. <a href="docs/11-Product-Scope-Requirements.md"><b>11 - Product Scope & Requirements</b></a>
+3. <a href="docs/04-Key-Features.md"><b>04 - Key Features</b></a>
+4. <a href="docs/10-Results-Impact.md"><b>10 - Results & Impact</b></a>
+5. <a href="docs/12-Roadmap-Lessons.md"><b>12 - Roadmap & Lessons</b></a>
 
-1. [**01-Overview**](docs/01-Overview.md) - Project vision and impact.
-2. [**02-Problem Statement**](docs/02-Problem-Statement.md) - Friction and visual fatigue.
-3. [**03-Solution Architecture**](docs/03-Solution-Architecture.md) - The 3-tier sync engine.
-4. [**04-Key Features**](docs/04-Key-Features.md) - Glassmorphism & local-first.
-5. [**05-Technical Decisions**](docs/05-Technical-Decisions.md) - The ADR log.
-6. [**06-Challenges & Solutions**](docs/06-Challenges-Solutions.md) - Handling dependency mapping.
-7. [**07-Performance Optimization**](docs/07-Performance-Optimization.md) - Bundle size & Hydration.
-8. [**08-Testing & Quality**](docs/08-Testing-Quality.md) - Automated verification.
-9. [**09-Deployment & DevOps**](docs/09-Deployment-DevOps.md) - Edge functions & CI/CD.
-10. [**10-Results & Impact**](docs/10-Results-Impact.md) - Final outcomes.
+## Full Documentation Index
+| # | Document |
+|---|---|
+| 00 | <a href="docs/00-Case-Study-Map.md">Case Study Map</a> |
+| 01 | <a href="docs/01-Overview.md">Overview</a> |
+| 02 | <a href="docs/02-Problem-Statement.md">Problem Statement</a> |
+| 03 | <a href="docs/03-Solution-Architecture.md">Solution Architecture</a> |
+| 04 | <a href="docs/04-Key-Features.md">Key Features</a> |
+| 05 | <a href="docs/05-Technical-Decisions.md">Technical Decisions</a> |
+| 06 | <a href="docs/06-Challenges-Solutions.md">Challenges & Solutions</a> |
+| 07 | <a href="docs/07-Performance-Optimization.md">Performance Optimization</a> |
+| 08 | <a href="docs/08-Testing-Quality.md">Testing & Quality</a> |
+| 09 | <a href="docs/09-Deployment-DevOps.md">Deployment & DevOps</a> |
+| 10 | <a href="docs/10-Results-Impact.md">Results & Impact</a> |
+| 11 | <a href="docs/11-Product-Scope-Requirements.md">Product Scope & Requirements</a> |
+| 12 | <a href="docs/12-Roadmap-Lessons.md">Roadmap & Lessons</a> |
 
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
-  <p>© 2026 <b>CODESHAN</b> | MIT License</p>
-</div>
+## License
+MIT License. See <a href="LICENSE">LICENSE</a>.

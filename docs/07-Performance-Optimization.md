@@ -1,42 +1,29 @@
-<div align="center">
+# 07 - Performance Optimization
 
-<!-- Language Switcher -->
-<p align="right">
-  <a href="07-Performance-Optimization.ar.md">العربية</a>
-</p>
+Language: [العربية](07-Performance-Optimization.ar.md)
 
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=07+-+Performance;The+Zero-Latency+Flow" alt="Performance Optimization"/>
+## Purpose
+Explain the performance strategy used to keep the product responsive under real workflow load.
 
-<br/>
+## Context
+FlowShan combines high visual density with frequent drag/drop and filtering operations.
 
-> **"Performance is not just about speed; it's about reliability."**
+## Decisions
+- Keep interaction-critical updates local first.
+- Reduce avoidable rerenders via clearer state boundaries.
+- Prefer lightweight visual patterns that preserve frame stability.
+- Use staged hydration patterns to reduce UX flicker.
 
----
+## Trade-offs
+- Optimization introduces extra architecture constraints.
+- Motion must be tuned carefully to avoid overdraw on lower-end devices.
+- Some implementation choices prioritize consistency over micro-optimizations.
 
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
+## Evidence
+- Lighthouse/quality capture: `../assets/banners/performance-lighthouse.png`
+- Calendar and board stress surfaces: `../assets/screenshots/calendar-heatmap.png`, `../assets/screenshots/kanban-board.png`
 
-</div>
+## Next
+Continue to `08-Testing-Quality.md` for validation methodology.
 
-## ⚡ Data Hydration Strategy
-To prevent the "Flash of Unstyled Content" (FOUC) and hydration mismatches in a local-first SSR app:
-- **Blocking Theme Scripts**: Prevents theme flickering before the UI loads.
-- **Zustand Persistence**: Leveraged `persist` middleware with a custom synchronization layer to bridge the gap between SSR and LocalStorage.
-
-## 📦 Bundle Optimization
-- **Dynamic Imports**: Kanban view panels and complex dialogs are lazy-loaded to keep the initial bundle size below **150kb**.
-- **Tailwind 4 Oxide Engine**: Reduced CSS bundle weight by 40% compared to traditional utility frameworks.
-
-## 🧪 Metrics
-- **Lighthouse Score**: 95+ for Performance and Accessibility.
-- **Interaction to Next Paint (INP)**: < 100ms across all core interactions.
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="right">
-  <a href="../README.md">🏠 Back to Home</a>
-</div>
+Back: [README](../README.md)

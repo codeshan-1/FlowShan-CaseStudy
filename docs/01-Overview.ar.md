@@ -1,46 +1,30 @@
-<div align="right" dir="rtl">
+# 01 - نظرة عامة
 
-<!-- Language Switcher -->
-<p align="left" dir="ltr">
-  <a href="01-Overview.md">English Version</a>
-</p>
+اللغة: [English](01-Overview.md)
 
-<div align="center">
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=01+-+Overview;نظرة+عامة+على+المشروع" alt="Overview"/>
-</div>
+## الهدف
+تحديد ما هو FlowShan، ومن يخدم، وما الفرضية التصميمية والهندسية التي يثبتها.
 
-<br/>
+## السياق
+FlowShan منصة إنتاجية SaaS لإدارة المشاريع والمهام والعملاء والملاحظات والتقويم.
+المنتج موجّه لمستخدمين يحتاجون سرعة واضحة وتجربة بصرية عالية الجودة.
 
-<blockquote align="center">
-  <b>"أدوات الإنتاجية لا يجب أن تكون وظيفية فحسب؛ بل يجب أن تكون ملهمة."</b>
-</blockquote>
+## القرارات
+- بناء التفاعل بنهج المحلية أولًا لسرعة الاستجابة.
+- اعتماد هوية بصرية سينمائية زجاجية للتميّز عن لوحات التحكم التقليدية.
+- اعتبار دعم العربي/الإنجليزي متطلبًا معماريًا أساسيًا.
 
----
+## المفاضلات
+- تعقيد أعلى في التنفيذ مقارنة بالواجهات الجاهزة.
+- الحاجة لإدارة حالة أدق للحفاظ على اتساق المحلي مع السحابي.
+- مجهود QA إضافي بسبب RTL + Responsive + Motion.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## الأدلة
+- هوية المنتج: `../assets/banners/main-hero.png`
+- إثبات الواجهة: `../assets/screenshots/dashboard-hero.png`
+- خريطة المعمارية: `03-Solution-Architecture.ar.md`
 
-## 🌌 الرؤية (The Vision)
-تم بناء **FlowShan** لإعادة تعريف تجربة إدارة المشاريع. بدلاً من الواجهات الجامدة التقليدية، يقدم التطبيق **سير عمل سينمائي وعضوي** يوازن بين الجمالية الفائقة والأداء الصارم.
+## التالي
+انتقل إلى `02-Problem-Statement.ar.md` لفهم القيود ومعايير النجاح.
 
-## 💎 الفلسفة الجوهرية
-1. **الجمالية كميزة أساسية**: تم دمج الـ Glassmorphism في منطق واجهة المستخدم الأساسي، وليس كـ "قشرة" خارجية فقط.
-2. **تفاعل فوري (Zero-Latency)**: تتم معالجة كل إجراء محلياً أولاً لضمان زمن استجابة أقل من 16 مللي ثانية.
-3. **دخول بلا عناء**: دعم كامل ومطلق للمستخدمين الضيوف مع إمكانية هجرة البيانات للسحابة بسلاسة تامة.
-
-## 🚀 الأثر والنتائج
-من خلال التركيز على نهج **المحلية أولاً (Local-First)** المدمج مع **Next.js 16** و **Tailwind 4**، يقضي FlowShan على إرهاق "حالات التحميل"، مما يجعل لوحة المهام تبدو وكأنها تطبيق سطح مكتب أصيل.
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="left" dir="ltr">
-  <a href="../README.ar.md">🏠 العودة للرئيسية</a>
-</div>
-
-</div>
+عودة: [README](../README.ar.md)

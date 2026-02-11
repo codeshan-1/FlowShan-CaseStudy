@@ -1,41 +1,33 @@
-<div align="center">
+# 02 - Problem Statement
 
-<!-- Language Switcher -->
-<p align="right">
-  <a href="02-Problem-Statement.ar.md">العربية</a>
-</p>
+Language: [العربية](02-Problem-Statement.ar.md)
 
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=02+-+Problem+Statement;The+Friction+of+Form" alt="Problem Statement"/>
+## Purpose
+Document the user and technical pain points that justified building FlowShan.
 
-<br/>
+## Context
+Common productivity tools frequently fail in at least one of these dimensions:
+- visual quality,
+- interaction speed,
+- bilingual correctness,
+- simple onboarding for guest users.
 
-> **"The bottleneck of productivity is often the tool itself."**
+## Decisions
+- Define local responsiveness as a first-order requirement.
+- Keep guest mode fully usable before authentication.
+- Preserve relational integrity when syncing local guest data to cloud accounts.
 
----
+## Trade-offs
+- Sync complexity increases because relational IDs must be remapped safely.
+- Maintaining both guest and authenticated flows increases test scope.
+- More product logic is required around migration and fallback behavior.
 
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
+## Evidence
+- Sync flow logic: `../diagrams/02-data-sync.mmd`
+- Guest-to-cloud architecture: `03-Solution-Architecture.md`
+- UX validation: `../assets/screenshots/kanban-board.png`
 
-</div>
+## Next
+Continue to `03-Solution-Architecture.md` for the chosen system design.
 
-## 🛑 The Challenge
-Modern productivity tools suffer from two major flaws:
-1. **Latency Sensitivity**: Constant loading states and network dependencies break the user's flow.
-2. **Onboarding Friction**: Mandatory sign-ups before users can even try the product lead to high bounce rates.
-3. **Visual Fatigue**: Standard interfaces that feel like clinical spreadsheets.
-
-## 📉 Impact
-These issues lead to "micro-frustrations" that accumulate over time, reducing the cognitive ease required for deep work. Users spend more time waiting for the tool than actually working.
-
-## 🎯 The Goal
-FlowShan's objective was to create a **zero-friction environment** where the user can start organized in seconds, without a login, in a world-class visual environment that doesn't feel like "work".
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="right">
-  <a href="../README.md">🏠 Back to Home</a>
-</div>
+Back: [README](../README.md)

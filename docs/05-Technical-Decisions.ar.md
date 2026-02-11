@@ -1,55 +1,30 @@
-<div align="right" dir="rtl">
+# 05 - القرارات التقنية
 
-<!-- Language Switcher -->
-<p align="left" dir="ltr">
-  <a href="05-Technical-Decisions.md">English Version</a>
-</p>
+اللغة: [English](05-Technical-Decisions.md)
 
-<div align="center">
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=05+-+Decisions;سجل+القرارات+الهندسية" alt="Technical Decisions"/>
-</div>
+## الهدف
+توثيق أهم القرارات الهندسية ولماذا تم اختيارها مقارنة ببدائل أبسط.
 
-<br/>
+## السياق
+المطلوب كان: سرعة تفاعل، دعم ثنائي اللغة، ومزامنة آمنة للبيانات العلائقية.
 
-<blockquote align="center">
-  <b>"الهندسة المعمارية هي فن اتخاذ التنازلات الصحيحة."</b>
-</blockquote>
+## القرارات
+- اعتماد المحلية أولًا في تحديث الحالة.
+- مزامنة مرحلية مع إعادة ربط المعرفات.
+- Tailwind 4 + متغيرات زجاجية مخصصة للتحكم البصري.
+- CSS Logical Properties لتقليل مشكلات RTL.
 
----
+## المفاضلات
+- مرونة أعلى مقابل عبء معماري أكبر.
+- صحة البيانات أولًا حتى لو زاد طول التنفيذ.
+- نظام تصميم مخصص يحتاج حوكمة مستمرة.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## الأدلة
+- سجل قرارات أساسي: `decisions.md`
+- مثال المزامنة: `../code-samples/sync-service.ts`
+- مخطط بنية المكونات: `../diagrams/03-component-tree.mmd`
 
-## 01. معمارية "المحلية أولاً" (Local-First)
-- **القرار**: إعطاء الأولوية لـ `localStorage` لجميع عمليات CRUD الأساسية.
-- **السبب**: القضاء على تأخر الشبكة وتوفير استجابة فورية لسير العمل عالي السرعة.
-- **الحالة**: ✅ **تم التنفيذ**
+## التالي
+انتقل إلى `06-Challenges-Solutions.ar.md`.
 
-## 02. المهاجرة العلائقية المتسلسلة
-- **القرار**: محرك مزامنة مخصص ينقل البيانات في مراحل مرتبة بدقة (العملاء -> المشاريع -> المهام).
-- **السبب**: الحفاظ على سلامة العلاقات العميقة عند ربط المعرفات المحلية المؤقتة بالمعرفات الدائمة للسيرفر.
-- **الحالة**: ✅ **تم التنفيذ**
-
-## 03. نظام التصميم: Tailwind 4 + Glassmorphism
-- **القرار**: تجنب مكتبات UI الضخمة لصالح نظام زجاجي مخصص يعتمد على متغيرات CSS.
-- **السبب**: تحكم كامل في الشفافية، التغبيش، واللمسات النيون مع الحفاظ على أقل حجم ممكن للحزمة.
-- **الحالة**: ✅ **تم التنفيذ**
-
-## 04. استراتيجية الترجمة: الخصائص المنطقية
-- **القرار**: استخدام خصائص CSS المنطقية (`margin-inline`, `padding-inline`, إلخ) بدلاً من المادية (`left`, `right`).
-- **السبب**: ضمان انعكاس مثالي للتخطيط لدعم اللغة العربية (RTL) بدون أي تعديلات يدوية.
-- **الحالة**: ✅ **تم التنفيذ**
-
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="left" dir="ltr">
-  <a href="../README.ar.md">🏠 العودة للرئيسية</a>
-</div>
-
-</div>
+عودة: [README](../README.ar.md)

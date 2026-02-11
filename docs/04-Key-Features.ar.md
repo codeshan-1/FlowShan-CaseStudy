@@ -1,59 +1,34 @@
-<div align="right" dir="rtl">
+# 04 - الميزات الجوهرية
 
-<!-- Language Switcher -->
-<p align="left" dir="ltr">
-  <a href="04-Key-Features.md">English Version</a>
-</p>
+اللغة: [English](04-Key-Features.md)
 
-<div align="center">
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=04+-+Features;أهم+الميزات+التقنية" alt="Key Features"/>
-</div>
+## الهدف
+عرض الميزات الأعلى تأثيرًا وربط كل ميزة بقيمة عملية للمستخدم.
 
-<br/>
+## السياق
+أولوية الميزات كانت مبنية على احتكاك الاستخدام اليومي: التخطيط، التنفيذ، المتابعة، وحفظ السياق.
 
-<blockquote align="center">
-  <b>"تكون الميزات جيدة بقدر جودة التجارب التي تخلقها."</b>
-</blockquote>
+## القرارات
+- نظام تصميم زجاجي متسق مع حركة محسوبة.
+- Kanban/List بنهج محلي أولًا لسرعة التشغيل.
+- ملاحظات مرتبطة بالسياق (مشروع/عميل).
+- تقويم تفاعلي لتوزيع الحمل.
+- مشاركة تقدم المشاريع بشكل آمن لأصحاب المصلحة.
+- توحيد حالات الفراغ عبر الصفحات.
 
----
+## المفاضلات
+- التصميم الغني يحتاج انضباطًا أعلى في الأداء.
+- كثافة الميزات ترفع تعقيد هندسة المعلومات.
+- ربط السياق يحسن الاسترجاع لكنه يزيد التعقيد العلائقي.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## الأدلة
+- Dashboard: `../assets/screenshots/dashboard-hero.png`
+- Kanban: `../assets/screenshots/kanban-board.png`
+- Calendar: `../assets/screenshots/calendar-heatmap.png`
+- Notes: `../assets/screenshots/notes-editor.png`
+- تحسينات Empty State موثقة في README ونطاق المنتج.
 
-## 💎 الميزات الجوهرية (Signature Features)
+## التالي
+انتقل إلى `05-Technical-Decisions.ar.md` لفهم أسباب الاختيارات.
 
-### 1. نظام تصميم الـ Glassmorphism
-- **التغبيش والوضوح**: لغة بصرية راقية باستخدام `backdrop-filter: blur()`.
-- **السمات الديناميكية**: تبديل سلس بين وضع "الفضاء المظلم" و "الزجاج المضيء".
-- **الرسوم المتحركة الدقيقة**: انتقالات مدعومة بـ Framer Motion لكل تفاعل.
-
-### 2. لوحة Kanban "المحلية أولاً"
-- **سحب وإفلات انسيابي**: سرعة تفاعل مفصولة تماماً عن حالة الشبكة.
-- **مهام فرعية غير محدودة**: تداخل عميق للمهام مع تتبع فوري لنسبة الإنجاز.
-- **سلامة العلاقات**: ربط المشاريع، المهام، والعملاء محلياً ومزامنتها كوحدة واحدة.
-
-### 3. ثنائية اللغة المتأصلة
-- **دعم اللغة العربية (RTL)**: دعم أصيل للغة العربية مع طباعة واحترافية (Typography).
-- **ترجمة سياقية**: تبديل ذكي للغة يحافظ على حالة المستخدم.
-
-### 4. إدارة البيانات المتقدمة
-- **تصفية ذكية**: تصفية المهام بشروط متعددة (المشروع، الأولوية، التاريخ).
-- **نظام الحذف الناعم (Soft Delete)**: معالجة وقائية للبيانات في بيئات العمل الحساسة.
-
----
-
-<div align="center">
-  <img src="../assets/banners/component-hierarchy.png" width="600" style="border-radius: 20px;"/>
-  <br/>
-  <b>تحليل بصري عالي الجودة لمكونات واجهة المستخدم</b>
-  <br/>
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="left" dir="ltr">
-  <a href="../README.ar.md">🏠 العودة للرئيسية</a>
-</div>
-
-</div>
+عودة: [README](../README.ar.md)

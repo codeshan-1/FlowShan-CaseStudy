@@ -1,57 +1,33 @@
-<div align="right" dir="rtl">
+# 03 - هندسة الحل
 
-<!-- Language Switcher -->
-<p align="left" dir="ltr">
-  <a href="03-Solution-Architecture.md">English Version</a>
-</p>
+اللغة: [English](03-Solution-Architecture.md)
 
-<div align="center">
-<!-- Typing SVG Header -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=30&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=03+-+Architecture;هندسة+الحلول+التقنية" alt="Solution Architecture"/>
-</div>
+## الهدف
+شرح المعمارية المختارة وكيفية التوفيق بين سرعة التفاعل المحلي واستمرارية التخزين السحابي.
 
-<br/>
+## السياق
+FlowShan يعمل بنموذج هجين:
+- حالة محلية للتفاعل الفوري،
+- API للحفظ السحابي بعد التوثيق،
+- مزامنة حتمية لترحيل بيانات الضيف.
 
-<blockquote align="center">
-  <b>"الهندسة المعمارية تتعلق بإدارة التعقيد مع الحفاظ على السرعة."</b>
-</blockquote>
+## القرارات
+- فصل النظام إلى طبقات: واجهة، مزامنة/API، قاعدة بيانات.
+- تنفيذ المزامنة على مراحل مرتبة لحفظ العلاقات.
+- إدارة الحالة بشكل واضح عبر مخازن موحدة.
 
----
+## المفاضلات
+- المزامنة الحتمية أكثر أمانًا لكنها أكثر تفصيلًا في التنفيذ.
+- إدارة الحالة تحتاج انضباطًا لمنع التداخل.
+- تتبع الأعطال يتطلب Instrumentation واضح.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
+## الأدلة
+- مخطط النظام: `../diagrams/01-system-flow.mmd`
+- تسلسل المزامنة: `../diagrams/02-data-sync.mmd`
+- مخطط قاعدة البيانات: `../diagrams/04-database-schema.mmd`
+- أصول بصرية: `../assets/banners/system-diagram.png`, `../assets/banners/sync-timeline.png`
 
-## 🏗️ معمارية المزامنة ثلاثية الطبقات
-تعتمد معمارية **FlowShan** على نموذج مزامنة **"الضيف أولاً"**. يتيح النظام للمستخدمين التفاعل مع مجموعة أدوات الإنتاجية الكاملة دون الحاجة لإنشاء حساب في البداية.
+## التالي
+انتقل إلى `04-Key-Features.ar.md` للميزات الأساسية.
 
-### 1. الطبقة المحلية (LocalStorage)
-- يتم إجراء جميع عمليات (CRUD) على التخزين المحلي للمتصفح.
-- لا توجد حاجة لطلبات الشبكة للتفاعلات البرمجية العادية.
-- يضمن زمن استجابة صفري ودعم كامل للعمل بدون إنترنت.
-
-### 2. الجسر (محرك المزامنة)
-- محرك هجرة بيانات تم بناؤه خصيصاً لربط المعرفات المحلية المؤقتة بمعرفات UUID الدائمة في قاعدة البيانات.
-- يعالج المعاملات الذرية (Atomic transactions) لضمان سلامة البيانات أثناء إنشاء الحساب.
-- يتم تنظيف الذاكرة المحلية فقط بعد التأكد من نجاح الرفع للسيرفر بنسبة 100%.
-
-### 3. طبقة السحابة (Prisma + PostgreSQL)
-- تخزين البيانات العلائقية المنظمة.
-- يعالج مزامنة الأجهزة المتعددة للمستخدمين المسجلين.
-- يضمن الحماية عبر Jose (JWT) وأنماط التفويض الحديثة.
-
----
-
-<div align="center">
-  <img src="../assets/banners/db-schema.png" width="600" style="border-radius: 20px;"/>
-  <br/>
-  <b>تمثيل بصري لعلاقات قاعدة البيانات (Prisma)</b>
-  <br/>
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="600" />
-</div>
-
-<div align="left" dir="ltr">
-  <a href="../README.ar.md">🏠 العودة للرئيسية</a>
-</div>
-
-</div>
+عودة: [README](../README.ar.md)

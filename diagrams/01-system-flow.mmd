@@ -1,45 +1,33 @@
-# 01 System Flow Diagram
-
-```mermaid
 graph TD
-    %% Define Styles
     classDef glass stroke:#00e5ff,stroke-width:2px,fill:#12121a,color:#ffffff
     classDef neon stroke:#9c27b0,stroke-width:2px,fill:#1b1b2f,color:#e0e0e0
     classDef action stroke:#22d3ee,stroke-width:1px,fill:#0f172a,stroke-dasharray: 5 5,color:#9ca3af
 
-    %% Nodes
-    User(("👤 User")):::glass
-    
-    subgraph "Frontend (Next.js)"
+    User((User)):::glass
+
+    subgraph Frontend["Frontend (Next.js)"]
         UI[Glass UI Interface]:::glass
-        DND[Drag & Drop Engine]:::action
+        DND[Drag and Drop Engine]:::action
         State[Zustand Store]:::action
     end
-    
-    subgraph "Data Layer"
+
+    subgraph DataLayer["Data Layer"]
         LS[LocalStorage (Guest)]:::glass
         API[Next.js API Routes]:::neon
         DB[(PostgreSQL)]:::neon
     end
 
-    %% Flow
     User -->|Interacts| UI
     UI -->|Drag Task| DND
     DND -->|Optimistic Update| State
     State -->|Persist| LS
-    
-    %% Sync Flow
+
     User -->|Login| API
     LS -->|Sync Data| API
     API -->|Batch Insert| DB
     DB -->|New UUIDs| API
     API -->|Hydrate| State
-    
-    %% Real-time / Async
-    DB -.->|Cron: Deadlines| User
-    
-    linkStyle default stroke:#64748b,stroke-width:1px
-```
 
-### Story: The Hybrid Flow
-The diagram illustrates how FlowShan handles immediate user interactions via **Optimistic Updates** (instantly moving a task in the UI before saving) while robustly managing data persistence in either LocalStorage (Guest) or PostgreSQL (Auth).
+    DB -.->|Cron: Deadlines| User
+
+    linkStyle default stroke:#64748b,stroke-width:1px

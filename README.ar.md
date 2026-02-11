@@ -1,112 +1,98 @@
 <div align="right" dir="rtl">
 
-<!-- Language Switcher -->
 <p align="left" dir="ltr">
-  <a href="README.md">English Version</a>
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/Read_in-English-00E5FF?style=for-the-badge&labelColor=0B1020" alt="English"/>
+  </a>
 </p>
 
 <div align="center">
-<!-- Title Branding -->
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=40&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FLOWSHAN;منصة+الإنتاجية+الذكية" alt="FlowShan Logo"/>
-</div>
+  <img src="assets/banners/main-hero.png" alt="FlowShan Hero" width="100%"/>
 
-<br/>
+# دراسة حالة FlowShan
+### منصة إنتاجية بنهج "المحلية أولاً" وتجربة استخدام سينمائية
 
-<blockquote align="center">
-  <b>"أدوات الإنتاجية يجب أن تكون ملهمة. زمن استجابة صفري، تصميم زجاجي، ومزامنة محلية أولاً."</b>
-</blockquote>
-
----
-
-<!-- Live Demo Button -->
-<div align="center">
 <p>
-  <a href="https://flowshan.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/تجربة_حية-00E5FF?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
-  </a>
-  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank">
-    <img src="https://img.shields.io/badge/كود_المشروع-12121a?style=for-the-badge&logo=github&logoColor=white" alt="Github Repo" />
-  </a>
+  <a href="https://flowshan.vercel.app" target="_blank"><img src="https://img.shields.io/badge/تجربة_حية-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020" alt="Live Demo"/></a>
+  <a href="https://github.com/codeshan/flowshan" target="_blank"><img src="https://img.shields.io/badge/مستودع_التطبيق-12121A?style=for-the-badge&logo=github&logoColor=white" alt="App Repo"/></a>
+  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank"><img src="https://img.shields.io/badge/مستودع_الدراسة-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
 </p>
-
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
 </div>
 
-## 📸 المعرض البصري (إثباتات العمل)
+## ملخص سريع للدراسة
+| المحور | الملخص |
+|---|---|
+| نوع المنتج | منصة SaaS للإنتاجية: مشاريع، مهام، عملاء، ملاحظات، تقويم |
+| الفكرة الأساسية | تفاعل محلي فوري ثم مزامنة سحابية بعد التوثيق |
+| الاتجاه البصري | هوية زجاجية (Glassmorphism) + حركة + دعم عربي/إنجليزي |
+| التقنية | Next.js 16, React 19, TypeScript, Tailwind 4, Zustand, Prisma, PostgreSQL |
+| النتيجة | تجربة سريعة جدًا مع واجهة احترافية وهوية متماسكة |
 
-<table align="center" dir="rtl">
-  <tr>
-    <td align="center"><b>لوحة التحكم الحية (Bento Grid)</b></td>
-    <td align="center"><b>تكامل تيليجرام والمزامنة الفورية</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/banners/visual-dashboard.png" width="400" style="border-radius: 10px;"/></td>
-    <td><img src="assets/banners/visual-telegram-sync.png" width="400" style="border-radius: 10px;"/></td>
-  </tr>
-  <tr>
-    <td align="center"><b>سير عمل Kanban (سحب وإفلات)</b></td>
-    <td align="center"><b>استجابة كاملة للهواتف المحمولة</b></td>
-  </tr>
-  <tr>
-    <td><img src="assets/banners/visual-kanban.png" width="400" style="border-radius: 10px;"/></td>
-    <td><img src="assets/banners/visual-mobile.png" width="400" style="border-radius: 10px;"/></td>
-  </tr>
-</table>
+## لماذا تم بناء FlowShan
+أغلب أدوات إدارة المهام إما شكلها تقليدي أو تجربتها بطيئة بسبب الاعتماد الكامل على الشبكة.  
+FlowShan اتبنى لإثبات إن الشكل الاحترافي والأداء الفوري ممكن يجتمعوا في منتج واحد.
 
----
+## آخر تحسينات تمت
+- تحسين حالة الفراغ في صفحة المشاريع:
+  - حالة واضحة لإضافة أول مشروع عند عدم وجود مشاريع.
+  - حالة "لا توجد نتائج" عند رجوع البحث/التصفية بدون نتائج.
+- إصلاح زر إضافة الملاحظات في حالة الفراغ عشان الأيقونة والنص يظهروا في سطر واحد ثابت على كل المقاسات.
 
-## ⚡ تميز الأداء (Performance)
-
+## معرض بصري (نفس ثيم المنتج)
 <div align="center">
-  <table align="center" dir="rtl">
-    <tr>
-      <td align="center"><b>تقرير Lighthouse (100/100)</b></td>
-      <td align="center"><b>إشعارات فورية (Push Notifications)</b></td>
-    </tr>
-    <tr>
-      <td><img src="assets/banners/performance-lighthouse.png" width="400" style="border-radius: 10px;"/></td>
-      <td><img src="assets/banners/visual-push-notifs.png" width="400" style="border-radius: 10px;"/></td>
-    </tr>
-  </table>
+  <img src="assets/screenshots/dashboard-hero.png" width="48%" alt="Dashboard"/>
+  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban"/>
+  <img src="assets/screenshots/calendar-heatmap.png" width="48%" alt="Calendar"/>
+  <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes"/>
 </div>
 
----
-
-## 🛠️ مجرة التقنيات (Tech Stack)
-
+## نظرة معمارية سريعة
 <div align="center">
-
-| **الطبقة** | **التقنيات المستخدمة** |
-|:---:|:---|
-| **الأساس** | ![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
-| **التصميم** | ![TailwindCSS](https://img.shields.io/badge/Tailwind_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) |
-| **المنطق** | ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white) ![Zustand](https://img.shields.io/badge/Zustand-orange?style=flat-square) ![Jose](https://img.shields.io/badge/Jose_JWT-black?style=flat-square) |
-| **البيئة** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white) |
-
+  <img src="assets/banners/system-diagram.png" width="49%" alt="System Diagram"/>
+  <img src="assets/banners/sync-timeline.png" width="49%" alt="Sync Timeline"/>
 </div>
 
----
+## مسارات قراءة حسب الهدف
+### لمسؤول التوظيف (10-15 دقيقة)
+1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
+2. <a href="docs/01-Overview.ar.md"><b>01 - نظرة عامة</b></a>
+3. <a href="docs/04-Key-Features.ar.md"><b>04 - الميزات الجوهرية</b></a>
+4. <a href="docs/10-Results-Impact.ar.md"><b>10 - النتائج والأثر</b></a>
 
-## 📂 تحليل عميق: دراسة الحالة (10 أجزاء)
+### للـ Tech Lead / Senior Engineer (25-40 دقيقة)
+1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
+2. <a href="docs/02-Problem-Statement.ar.md"><b>02 - المشكلة</b></a>
+3. <a href="docs/03-Solution-Architecture.ar.md"><b>03 - معمارية الحل</b></a>
+4. <a href="docs/05-Technical-Decisions.ar.md"><b>05 - القرارات التقنية</b></a>
+5. <a href="docs/06-Challenges-Solutions.ar.md"><b>06 - التحديات والحلول</b></a>
+6. <a href="docs/07-Performance-Optimization.ar.md"><b>07 - تحسين الأداء</b></a>
+7. <a href="docs/08-Testing-Quality.ar.md"><b>08 - الاختبار والجودة</b></a>
 
-لتحليل هندسي معمق، استكشف باقة التوثيق الكاملة:
+### لصاحب المنتج / العميل (15-20 دقيقة)
+1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
+2. <a href="docs/11-Product-Scope-Requirements.ar.md"><b>11 - نطاق المنتج والمتطلبات</b></a>
+3. <a href="docs/04-Key-Features.ar.md"><b>04 - الميزات الجوهرية</b></a>
+4. <a href="docs/10-Results-Impact.ar.md"><b>10 - النتائج والأثر</b></a>
+5. <a href="docs/12-Roadmap-Lessons.ar.md"><b>12 - خارطة الطريق والدروس</b></a>
 
-1. [**01-نظرة عامة**](docs/01-Overview.ar.md) - رؤية المشروع والأثر.
-2. [**02-تحديد المشكلة**](docs/02-Problem-Statement.ar.md) - الاحتكاك والإرهاق البصري.
-3. [**03-هندسة الحلول**](docs/03-Solution-Architecture.ar.md) - محرك المزامنة ثلاثي الطبقات.
-4. [**04-الميزات الجوهرية**](docs/04-Key-Features.ar.md) - التصميم الزجاجي والمحلية أولاً.
-5. [**05-القرارات التقنية**](docs/05-Technical-Decisions.ar.md) - سجل القرارات الهندسية (ADR).
-6. [**06-التحديات والحلول**](docs/06-Challenges-Solutions.ar.md) - معالجة خرائط التبعيات.
-7. [**07-تحسين الأداء**](docs/07-Performance-Optimization.ar.md) - حجم الحزمة وفلسفة الـ Hydration.
-8. [**08-الجودة والاختبار**](docs/08-Testing-Quality.ar.md) - أنظمة التحقق التلقائي.
-9. [**09-النشر والعمليات**](docs/09-Deployment-DevOps.ar.md) - وظائف الحافة والـ CI/CD.
-10. [**10-النتائج والنتائج النهائي**](docs/10-Results-Impact.ar.md) - النتائج النهائية والأثر.
+## فهرس الدراسة الكامل
+| # | المستند |
+|---|---|
+| 00 | <a href="docs/00-Case-Study-Map.ar.md">خريطة الدراسة</a> |
+| 01 | <a href="docs/01-Overview.ar.md">نظرة عامة</a> |
+| 02 | <a href="docs/02-Problem-Statement.ar.md">تحديد المشكلة</a> |
+| 03 | <a href="docs/03-Solution-Architecture.ar.md">هندسة الحل</a> |
+| 04 | <a href="docs/04-Key-Features.ar.md">الميزات الجوهرية</a> |
+| 05 | <a href="docs/05-Technical-Decisions.ar.md">القرارات التقنية</a> |
+| 06 | <a href="docs/06-Challenges-Solutions.ar.md">التحديات والحلول</a> |
+| 07 | <a href="docs/07-Performance-Optimization.ar.md">تحسين الأداء</a> |
+| 08 | <a href="docs/08-Testing-Quality.ar.md">الاختبار والجودة</a> |
+| 09 | <a href="docs/09-Deployment-DevOps.ar.md">النشر وعمليات DevOps</a> |
+| 10 | <a href="docs/10-Results-Impact.ar.md">النتائج والأثر</a> |
+| 11 | <a href="docs/11-Product-Scope-Requirements.ar.md">نطاق المنتج والمتطلبات</a> |
+| 12 | <a href="docs/12-Roadmap-Lessons.ar.md">خارطة الطريق والدروس</a> |
 
----
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="800" />
-  <p>© 2026 <b>CODESHAN</b> | MIT License</p>
-</div>
+## الرخصة
+MIT License - راجع <a href="LICENSE">LICENSE</a>.
 
 </div>

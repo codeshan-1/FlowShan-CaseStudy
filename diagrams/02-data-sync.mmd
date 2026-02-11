@@ -1,48 +1,41 @@
-# 02 Data Synchronization Strategy
-
-```mermaid
 sequenceDiagram
     participant User
-    participant LS as 💾 LocalStorage
-    participant SE as 🔄 Sync Engine
-    participant API as 📡 REST API
-    participant DB as 🏠 Database
+    participant LS as LocalStorage
+    participant SE as Sync Engine
+    participant API as REST API
+    participant DB as Database
 
-    Note over User, DB: Phase 1: Authentication & Discovery
-    User->>LS: Saves Project & Tasks (Guest)
-    User->>API: Login(Google/Email)
-    API-->>User: JWT & UserID
+    Note over User,DB: Phase 1 - Authentication and Discovery
+    User->>LS: Save projects and tasks as guest
+    User->>API: Login (Google or Email)
+    API-->>User: JWT and user ID
 
-    Note over User, DB: Phase 2: Client & Project Sync
+    Note over User,DB: Phase 2 - Client and Project Sync
     SE->>LS: getLocalClients()
-    SE->>API: POST /api/sync/clients (Batch)
+    SE->>API: POST /api/sync/clients (batch)
     API->>DB: createMany(clients)
-    DB-->>API: New Client UUIDs {oldId: newId}
-    API-->>SE: Map {clientMap}
+    DB-->>API: New client UUIDs {oldId:newId}
+    API-->>SE: clientMap
 
     SE->>LS: getLocalProjects()
     SE->>SE: mapClientIds(projects, clientMap)
-    SE->>API: POST /api/sync/projects (Batch)
+    SE->>API: POST /api/sync/projects (batch)
     API->>DB: createMany(projects)
-    DB-->>API: New Project UUIDs {oldId: newId}
-    API-->>SE: Map {projectMap}
+    DB-->>API: New project UUIDs {oldId:newId}
+    API-->>SE: projectMap
 
-    Note over User, DB: Phase 3: Tasks, Subtasks & Notes
+    Note over User,DB: Phase 3 - Tasks, Subtasks, and Notes
     SE->>LS: getLocalTasks()
     SE->>SE: mapProjectIds(tasks, projectMap)
-    SE->>API: POST /api/sync/tasks (Batch)
+    SE->>API: POST /api/sync/tasks (batch)
     API->>DB: createMany(tasks_with_subtasks)
-    DB-->>API: New Task UUIDs
-    
+    DB-->>API: New task UUIDs
+
     SE->>LS: getLocalNotes()
     SE->>SE: mapGroupIds(notes, clientMap, projectMap)
-    SE->>API: POST /api/sync/notes (Batch)
+    SE->>API: POST /api/sync/notes (batch)
     API->>DB: createMany(notes)
-    
-    Note over User, DB: Phase 4: Finalization
-    SE->>LS: Clear Synced Data
-    API-->>User: Success (Reload Dashboard)
-```
 
-### Story: Maintaining Referential Integrity
-The most critical part of the sync is not just moving data, but **preserving relationships**. By mapping old local IDs (cuid-like) to new PostgreSQL UUIDs in memory during the process, we ensure that a Task created locally as "Task A" belonging to "Project X" is correctly re-assigned to the *newly created* "Project X" on the server.
+    Note over User,DB: Phase 4 - Finalization
+    SE->>LS: Clear synced local data
+    API-->>User: Success and reload dashboard
