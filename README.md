@@ -13,30 +13,36 @@
 
 <p>
   <a href="https://flowshan.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Live_Demo-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020" alt="Live Demo"/></a>
-  <a href="https://github.com/codeshan/flowshan" target="_blank"><img src="https://img.shields.io/badge/Main_App-12121A?style=for-the-badge&logo=github&logoColor=white" alt="Main Repo"/></a>
-  <a href="https://github.com/codeshan/FlowShan-CaseStudy" target="_blank"><img src="https://img.shields.io/badge/Case_Study-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
+  <img src="https://img.shields.io/badge/Main_App-Private_Repository-12121A?style=for-the-badge&logo=github&logoColor=white" alt="Main Repo Private"/>
+  <a href="https://github.com/codeshan-1/FlowShan-CaseStudy/" target="_blank"><img src="https://img.shields.io/badge/Case_Study-Repository-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
 </p>
 
 </div>
 
-## Case Study Snapshot
-| Area | Summary |
-|---|---|
-| Product | SaaS productivity app for projects, tasks, clients, notes, calendar |
-| Core Bet | Local-first interactions, cloud sync on auth |
-| UX Direction | Glassmorphism + motion + bilingual (EN/AR RTL) |
-| Stack | Next.js 16, React 19, TypeScript, Tailwind 4, Zustand, Prisma, PostgreSQL |
-| Outcome | Fast perceived UX, clean sync model, professional visual identity |
+## Executive Summary
+FlowShan is a productivity web app designed around one core principle: **instant local interaction first, cloud persistence second**.  
+This case study documents what was built, why decisions were made, and where trade-offs were accepted.
 
-## Why This Project Exists
-Most task tools are either visually dull or interaction-heavy with network latency.  
-FlowShan was built to prove both can coexist: premium look + near-instant interaction.
+## Verified Project Facts
+| Metric | Value |
+|---|---|
+| Core stack | Next.js 16.1.6, React 19, TypeScript, Tailwind 4, Prisma 7 |
+| API routes | 33 routes in `src/app/api/*` |
+| Platform pages | 11 pages in `src/app/[locale]/(platform)` |
+| State stores | 7 Zustand stores in `src/store` |
+| UI components | 61 components in `src/components` |
+| Diagrams | 4 Mermaid source diagrams in `diagrams/*.mmd` |
+
+## Repository Access Note
+- Main application repository is private.
+- This case study is grounded in direct source review and includes concrete module references.
 
 ## What Was Recently Improved
-- Projects page empty-state UX was formalized:
-  - dedicated first-project prompt when there are zero projects.
-  - explicit "no results" state when filters/search return empty.
-- Notes empty-state CTA alignment was fixed for consistent icon+label layout across breakpoints.
+- Projects empty-state UX now has:
+  - first-project onboarding state,
+  - no-results state for search/filter empty returns.
+- Notes empty-state CTA alignment fixed for stable icon + label layout.
+- Diagram sources normalized to Mermaid-native `.mmd` format.
 
 ## Visual Proof
 <div align="center">
@@ -46,7 +52,7 @@ FlowShan was built to prove both can coexist: premium look + near-instant intera
   <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes"/>
 </div>
 
-## Architecture & System View
+## Architecture Preview
 <div align="center">
   <img src="assets/banners/system-diagram.png" width="49%" alt="System Diagram"/>
   <img src="assets/banners/sync-timeline.png" width="49%" alt="Sync Timeline"/>

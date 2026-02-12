@@ -1,33 +1,25 @@
-graph TD
-    classDef glass stroke:#00e5ff,stroke-width:2px,fill:#12121a,color:#ffffff
-    classDef neon stroke:#9c27b0,stroke-width:2px,fill:#1b1b2f,color:#e0e0e0
-    classDef action stroke:#22d3ee,stroke-width:1px,fill:#0f172a,stroke-dasharray: 5 5,color:#9ca3af
+flowchart TD
+    U[User]
 
-    User((User)):::glass
-
-    subgraph Frontend["Frontend (Next.js)"]
-        UI[Glass UI Interface]:::glass
-        DND[Drag and Drop Engine]:::action
-        State[Zustand Store]:::action
+    subgraph FE[Frontend - Next.js]
+        UI[UI Layer]
+        STORE[Zustand Store]
+        DND[Drag and Drop]
     end
 
-    subgraph DataLayer["Data Layer"]
-        LS[LocalStorage (Guest)]:::glass
-        API[Next.js API Routes]:::neon
-        DB[(PostgreSQL)]:::neon
+    subgraph DATA[Data Layer]
+        LS[LocalStorage - Guest]
+        API[API Routes]
+        DB[(PostgreSQL)]
     end
 
-    User -->|Interacts| UI
-    UI -->|Drag Task| DND
-    DND -->|Optimistic Update| State
-    State -->|Persist| LS
+    U --> UI
+    UI --> DND
+    DND --> STORE
+    STORE --> LS
 
-    User -->|Login| API
-    LS -->|Sync Data| API
-    API -->|Batch Insert| DB
-    DB -->|New UUIDs| API
-    API -->|Hydrate| State
-
-    DB -.->|Cron: Deadlines| User
-
-    linkStyle default stroke:#64748b,stroke-width:1px
+    U -->|Login| API
+    LS -->|Sync| API
+    API --> DB
+    DB --> API
+    API --> STORE

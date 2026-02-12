@@ -3,31 +3,27 @@
 اللغة: [English](03-Solution-Architecture.md)
 
 ## الهدف
-شرح المعمارية المختارة وكيفية التوفيق بين سرعة التفاعل المحلي واستمرارية التخزين السحابي.
+شرح كيف يجمع FlowShan بين سرعة التفاعل المحلي والحفظ السحابي.
 
-## السياق
-FlowShan يعمل بنموذج هجين:
-- حالة محلية للتفاعل الفوري،
-- API للحفظ السحابي بعد التوثيق،
-- مزامنة حتمية لترحيل بيانات الضيف.
+## الطبقات المعمارية
+1. واجهة (Next.js App Router + Components)
+2. حالة (Zustand stores)
+3. API (`src/app/api/*`)
+4. بيانات (Prisma adapter + PostgreSQL)
 
-## القرارات
-- فصل النظام إلى طبقات: واجهة، مزامنة/API، قاعدة بيانات.
-- تنفيذ المزامنة على مراحل مرتبة لحفظ العلاقات.
-- إدارة الحالة بشكل واضح عبر مخازن موحدة.
+## أدلة موثقة من الكود
+- إعداد قاعدة البيانات: `src/lib/db.ts`, `src/lib/prisma.ts`
+- API المشاريع: `src/app/api/projects/route.ts`
+- API المهام: `src/app/api/tasks/route.ts`
+- API الملاحظات والعملاء: `src/app/api/notes/route.ts`, `src/app/api/clients/route.ts`
+- تسلسل المزامنة: `src/lib/sync-service.ts`
+- مصادر الرسوم: `../diagrams/01-system-flow.mmd`, `../diagrams/02-data-sync.mmd`, `../diagrams/04-database-schema.mmd`
 
 ## المفاضلات
-- المزامنة الحتمية أكثر أمانًا لكنها أكثر تفصيلًا في التنفيذ.
-- إدارة الحالة تحتاج انضباطًا لمنع التداخل.
-- تتبع الأعطال يتطلب Instrumentation واضح.
-
-## الأدلة
-- مخطط النظام: `../diagrams/01-system-flow.mmd`
-- تسلسل المزامنة: `../diagrams/02-data-sync.mmd`
-- مخطط قاعدة البيانات: `../diagrams/04-database-schema.mmd`
-- أصول بصرية: `../assets/banners/system-diagram.png`, `../assets/banners/sync-timeline.png`
+- زيادة أمان المزامنة = زيادة تعقيد التنفيذ.
+- آليات self-healing (slugs) تحسن الاعتمادية لكنها تضيف عملًا على السيرفر.
 
 ## التالي
-انتقل إلى `04-Key-Features.ar.md` للميزات الأساسية.
+`04-Key-Features.ar.md`
 
 عودة: [README](../README.ar.md)

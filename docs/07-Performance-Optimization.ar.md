@@ -3,27 +3,24 @@
 اللغة: [English](07-Performance-Optimization.md)
 
 ## الهدف
-شرح منهجية الأداء المستخدمة للحفاظ على تجربة سريعة تحت ضغط الاستخدام الفعلي.
+توضيح قرارات الأداء في مسارات التفاعل الأساسية.
 
-## السياق
-FlowShan يجمع بين واجهة كثيفة بصريًا وتفاعلات متكررة (سحب/إفلات/تصفية).
+## استراتيجية التحسين
+1. التحديثات الحرجة تتم محليًا أولًا.
+2. استخدام memoization في التصفية والتجميع.
+3. فصل مسارات board/list لخفض الحمل.
+4. استخدام motion في نقاط ذات قيمة فقط.
 
-## القرارات
-- تنفيذ التفاعلات الحرجة محليًا أولًا.
-- تقليل إعادة الرسم عبر حدود حالة أوضح.
-- استخدام أنماط بصرية خفيفة نسبيًا للحفاظ على ثبات الإطارات.
-- تنظيم hydration لتقليل الوميض.
+## أدلة موثقة من الكود
+- Memoized task filtering: `src/app/[locale]/(platform)/tasks/page.tsx`
+- Calendar drag computations: `src/components/calendar/interactive-calendar.tsx`
+- Notes transitions: `src/app/[locale]/(platform)/notes/page.tsx`, `src/components/notes/note-grid-view.tsx`
+- دليل بصري: `../assets/banners/performance-lighthouse.png`
 
-## المفاضلات
-- التحسين يفرض قيودًا معمارية إضافية.
-- الحركة تحتاج ضبط دقيق لتفادي الحمل على الأجهزة الأضعف.
-- بعض القرارات تفضّل الاتساق على التحسينات الدقيقة جدًا.
-
-## الأدلة
-- لقطة الأداء: `../assets/banners/performance-lighthouse.png`
-- أسطح ضغط الأداء: `../assets/screenshots/calendar-heatmap.png`, `../assets/screenshots/kanban-board.png`
+## ملاحظة قيد بيئة
+فشل build في بعض البيئات المقيدة بسبب Google Fonts (مشكلة بيئة، ليست منطق تطبيق).
 
 ## التالي
-انتقل إلى `08-Testing-Quality.ar.md`.
+`08-Testing-Quality.ar.md`
 
 عودة: [README](../README.ar.md)

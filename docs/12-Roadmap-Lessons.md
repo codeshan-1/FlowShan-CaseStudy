@@ -3,26 +3,29 @@
 Language: [العربية](12-Roadmap-Lessons.ar.md)
 
 ## Purpose
-Present the next implementation milestones and the practical lessons learned from current delivery.
+Define high-confidence next steps grounded in current architecture.
 
-## Context
-Roadmap priorities are based on real constraints observed during architecture and UX implementation.
+## Roadmap
+### Phase 1 - Reliability
+- Expand sync observability and recovery visibility.
+- Improve fallback behavior for external dependency failures.
 
-## Decisions
-- Milestone 1: reliability hardening (sync observability, fallback paths, safer failure recovery).
-- Milestone 2: collaboration foundations (workspace model, baseline roles, shared activity flow).
-- Milestone 3: product intelligence (throughput insights, weekly summaries, planning hints).
+### Phase 2 - Collaboration
+- Introduce workspace abstraction and baseline roles.
+- Add shared activity views for project-level collaboration.
 
-## Trade-offs
-- Reliability improvements reduce short-term feature throughput.
-- Collaboration features increase domain and permission complexity.
-- Analytics features require careful privacy and cost controls.
+### Phase 3 - Intelligence
+- Add lightweight productivity insights and planning warnings.
 
-## Evidence
-- Lessons source threads: `05-Technical-Decisions.md`, `06-Challenges-Solutions.md`
-- Scope constraints baseline: `11-Product-Scope-Requirements.md`
+## Practical Lessons
+1. Local-first improves perceived speed dramatically.
+2. Sync correctness matters more than sync throughput.
+3. Bilingual quality must be architectural, not post-hoc.
+4. Visual ambition requires strict consistency governance.
 
-## Next
-Return to `README.md` and choose a role-specific reading path.
+## Verified Anchors
+- Sync: `src/lib/sync-service.ts`
+- Auth/session reliability: `src/store/auth.ts`, `src/app/api/auth/*`
+- Cross-module UX: `src/app/[locale]/(platform)/*`
 
 Back: [README](../README.md)

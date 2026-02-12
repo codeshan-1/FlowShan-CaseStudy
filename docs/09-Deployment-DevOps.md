@@ -3,26 +3,24 @@
 Language: [العربية](09-Deployment-DevOps.ar.md)
 
 ## Purpose
-Describe how FlowShan is shipped, monitored, and operated.
+Summarize release and operational model.
 
-## Context
-The deployment model must support rapid iteration while protecting quality and data safety.
+## Deployment Model
+- Hosting target: Vercel (live demo public)
+- Build/runtime: Next.js app with API routes
+- Data layer: PostgreSQL through Prisma adapter
+- Environment-driven configuration for auth and integrations
 
-## Decisions
-- Use Vercel-centered deployment for Next.js workflows.
-- Keep environment separation explicit (dev/staging/prod).
-- Track runtime behavior relevant to sync and API stability.
+## Verified Code Evidence
+- Runtime scripts: `package.json`
+- OAuth callback flow: `src/app/api/auth/google/callback/route.ts`
+- Notification integrations: `src/app/api/integrations/telegram/*`, `src/lib/mailer.ts`
+- Service health endpoint: `src/app/api/system/mailer-status/route.ts`
 
 ## Trade-offs
-- Platform convenience can create provider-specific assumptions.
-- Environment configuration discipline is required to avoid drift.
-- Observability depth depends on instrumentation investment.
-
-## Evidence
-- Live deployment endpoint: `https://flowshan.vercel.app`
-- Architecture and data flow docs: `03-Solution-Architecture.md`, `05-Technical-Decisions.md`
+- Serverless convenience with stricter external dependency behavior (e.g., fonts/network constraints).
 
 ## Next
-Continue to `10-Results-Impact.md`.
+`10-Results-Impact.md`
 
 Back: [README](../README.md)

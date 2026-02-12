@@ -1,45 +1,46 @@
 # 00 - Case Study Map
 
-## Why this file exists
-This is the navigation entrypoint for the entire FlowShan case study.
-Use it when you want to quickly find answers without reading every document.
+## Purpose
+Navigation entrypoint for the full FlowShan documentation.
 
-## One-Line Product Context
-FlowShan is a local-first productivity app that prioritizes instant UX, bilingual support (EN/AR), and reliable sync from guest local data to authenticated cloud storage.
+## Project Snapshot (Verified)
+- Framework: Next.js `16.1.6` (`package.json`)
+- UI runtime: React `19.2.3`
+- State layer: Zustand stores in `src/store/*`
+- API layer: `src/app/api/*` (33 route files)
+- Platform pages: `src/app/[locale]/(platform)/*` (11 page files)
+- i18n: `src/i18n/routing.ts`, `src/i18n/request.ts`
 
-## What Questions Each Document Answers
-- `01-Overview.md`: What is FlowShan and what principles drive it?
-- `02-Problem-Statement.md`: What user and technical problems were being solved?
-- `03-Solution-Architecture.md`: How does the sync architecture actually work?
-- `04-Key-Features.md`: What does the product deliver to users?
-- `05-Technical-Decisions.md`: Why were these architectural choices made?
-- `06-Challenges-Solutions.md`: What went wrong and how was it solved?
-- `07-Performance-Optimization.md`: How did performance stay high?
-- `08-Testing-Quality.md`: How is quality enforced and validated?
-- `09-Deployment-DevOps.md`: How is release and operations handled?
-- `10-Results-Impact.md`: What measurable outcomes were achieved?
-- `11-Product-Scope-Requirements.md`: What is in scope/out of scope and why?
-- `12-Roadmap-Lessons.md`: What comes next and what was learned?
-
-## Fast Reading Modes
-### A. Portfolio Review (10 min)
+## Recommended Reading Paths
+### Portfolio Review (10 min)
 1. `01-Overview.md`
 2. `04-Key-Features.md`
 3. `10-Results-Impact.md`
 
-### B. Architecture Review (30-40 min)
+### Engineering Review (30-40 min)
 1. `02-Problem-Statement.md`
 2. `03-Solution-Architecture.md`
 3. `05-Technical-Decisions.md`
 4. `06-Challenges-Solutions.md`
 5. `07-Performance-Optimization.md`
+6. `08-Testing-Quality.md`
 
-### C. Product/Business Review (20 min)
+### Product Scope Review (20 min)
 1. `11-Product-Scope-Requirements.md`
 2. `04-Key-Features.md`
 3. `10-Results-Impact.md`
 4. `12-Roadmap-Lessons.md`
 
-## Scope Confidence Notes
-- The case study documents architecture, UX, and implementation decisions based on the existing `flowshan` codebase.
-- Build verification can fail in restricted environments when Google Fonts are blocked; this is environmental, not a code-quality issue.
+## Document-to-Question Mapping
+- `01`: What is the product thesis?
+- `02`: What constraints/problem shape the build?
+- `03`: How does local-first + cloud sync work technically?
+- `04`: What user-facing capabilities were prioritized?
+- `05`: Why these technical choices over alternatives?
+- `06`: What failed and how was it mitigated?
+- `07`: How was responsiveness preserved?
+- `08`: How is quality enforced?
+- `09`: How is release/ops handled?
+- `10`: What outcomes are visible now?
+- `11`: What is in scope vs intentionally out of scope?
+- `12`: What is next and why?

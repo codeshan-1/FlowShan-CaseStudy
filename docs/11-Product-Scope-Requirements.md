@@ -3,27 +3,31 @@
 Language: [العربية](11-Product-Scope-Requirements.ar.md)
 
 ## Purpose
-Define what the current product release includes, excludes, and requires for success.
+Make release boundaries explicit.
 
-## Context
-Without explicit scope boundaries, architecture and roadmap quality degrade quickly.
+## In Scope (Current)
+- Dashboard, projects, tasks, clients, notes, calendar
+- Guest-first usage + authenticated persistence
+- EN/AR localization
+- API-backed CRUD for core entities
 
-## Decisions
-- In scope: projects, tasks, clients, notes, calendar, guest-first flow, EN/AR support.
-- Out of scope (current): team RBAC depth, multi-device conflict engine, native apps, advanced BI.
-- Success criteria include responsiveness, migration safety, and RTL consistency.
+## Out of Scope (Current)
+- Full team RBAC matrix
+- Multi-device conflict resolution engine
+- Native mobile apps
+- Advanced BI analytics suite
 
-## Trade-offs
-- Narrower scope improves execution quality but postpones some enterprise features.
-- Guest-first support increases migration complexity.
-- Bilingual parity requires continuous validation effort.
+## Functional Requirements
+1. Guest can use core features immediately.
+2. Authenticated users persist data through APIs.
+3. Task/project operations remain responsive.
+4. Search supports multi-entity retrieval.
 
-## Evidence
-- Scope map: `00-Case-Study-Map.md`
-- Feature reference: `04-Key-Features.md`
-- Reliability constraints: `06-Challenges-Solutions.md`
+## Verified Evidence
+- APIs: `src/app/api/projects/route.ts`, `src/app/api/tasks/route.ts`, `src/app/api/clients/route.ts`, `src/app/api/notes/route.ts`, `src/app/api/search/route.ts`
+- Stores and state: `src/store/*`
 
 ## Next
-Continue to `12-Roadmap-Lessons.md` for forward plan.
+`12-Roadmap-Lessons.md`
 
 Back: [README](../README.md)

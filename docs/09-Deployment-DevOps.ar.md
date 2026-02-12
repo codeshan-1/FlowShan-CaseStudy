@@ -1,28 +1,26 @@
-# 09 - النشر وعمليات DevOps
+# 09 - النشر وDevOps
 
 اللغة: [English](09-Deployment-DevOps.md)
 
 ## الهدف
-شرح كيف يتم نشر FlowShan وتشغيله ومراقبته.
+تلخيص نموذج النشر والتشغيل.
 
-## السياق
-عملية النشر يجب أن تدعم السرعة في التطوير مع حماية الجودة وسلامة البيانات.
+## نموذج التشغيل
+- الاستضافة: Vercel (نسخة حية متاحة)
+- التشغيل: Next.js app + API routes
+- البيانات: PostgreSQL عبر Prisma adapter
+- الإعدادات: بيئية (auth/integrations)
 
-## القرارات
-- اعتماد نشر متمحور حول Vercel لبيئة Next.js.
-- فصل بيئات التشغيل بوضوح (dev/staging/prod).
-- متابعة السلوك التشغيلي المرتبط بالمزامنة واستقرار الـAPI.
+## أدلة موثقة من الكود
+- Scripts التشغيل: `package.json`
+- OAuth callback: `src/app/api/auth/google/callback/route.ts`
+- تكاملات: `src/app/api/integrations/telegram/*`, `src/lib/mailer.ts`
+- endpoint حالة النظام: `src/app/api/system/mailer-status/route.ts`
 
 ## المفاضلات
-- راحة المنصة قد تخلق ارتباطًا تقنيًا مزود-محدد.
-- ضبط البيئات يحتاج انضباطًا مستمرًا.
-- عمق المراقبة يعتمد على الاستثمار في الـInstrumentation.
-
-## الأدلة
-- رابط التشغيل: `https://flowshan.vercel.app`
-- مرجع المعمارية: `03-Solution-Architecture.ar.md`, `05-Technical-Decisions.ar.md`
+سهولة Serverless مقابل حساسية أعلى للقيود الخارجية (مثل الشبكة/الخطوط).
 
 ## التالي
-انتقل إلى `10-Results-Impact.ar.md`.
+`10-Results-Impact.ar.md`
 
 عودة: [README](../README.ar.md)

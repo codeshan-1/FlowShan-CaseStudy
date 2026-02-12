@@ -3,27 +3,24 @@
 Language: [العربية](08-Testing-Quality.ar.md)
 
 ## Purpose
-Define how quality is validated and how regressions are prevented.
+Define how quality is validated in a multi-surface product.
 
-## Context
-The product has multiple risk vectors: sync correctness, RTL behavior, responsive rendering, and UI consistency.
+## Quality Gates
+1. Linting and static checks before release workflows.
+2. Behavioral verification for guest/auth flows.
+3. UI consistency checks for empty states and bilingual rendering.
+4. Diagram/source consistency checks for documentation quality.
 
-## Decisions
-- Validate critical behavior across unit/integration/e2e layers.
-- Add visual consistency checks for shared components and empty states.
-- Keep test focus on correctness of migration + UX continuity.
+## Verified Evidence
+- Lint script: `package.json` (`eslint`)
+- Critical surfaces: projects/tasks/notes/calendar pages
+- Empty-state fixes: `src/app/[locale]/(platform)/projects/page.tsx`, `src/components/notes/note-grid-view.tsx`
+- Screenshot validation process: `99-Screenshot-Guide.md`
 
-## Trade-offs
-- Broader QA coverage increases maintenance work.
-- E2E stability requires disciplined fixtures and deterministic data states.
-- Visual checks can be sensitive to environment differences.
-
-## Evidence
-- Screenshot capture process: `99-Screenshot-Guide.md`
-- Sync safety logic: `../code-samples/sync-service.ts`
-- Cross-surface consistency evidence in `assets/screenshots/*`
+## Remaining Risk
+Lack of full public E2E suite in this repository; current evidence is code-anchored + visual validation.
 
 ## Next
-Continue to `09-Deployment-DevOps.md`.
+`09-Deployment-DevOps.md`
 
 Back: [README](../README.md)

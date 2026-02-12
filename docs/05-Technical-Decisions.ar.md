@@ -3,28 +3,27 @@
 اللغة: [English](05-Technical-Decisions.md)
 
 ## الهدف
-توثيق أهم القرارات الهندسية ولماذا تم اختيارها مقارنة ببدائل أبسط.
+توثيق القرارات التقنية الرئيسية ولماذا تم اختيارها.
 
-## السياق
-المطلوب كان: سرعة تفاعل، دعم ثنائي اللغة، ومزامنة آمنة للبيانات العلائقية.
+## قرارات رئيسية
+1. اعتماد المحلية أولًا عبر Zustand.
+2. إدارة auth/tokens مع refresh fallback.
+3. تفويض API عبر bearer + JWT verification.
+4. Prisma + PG pool مع singleton في التطوير.
+5. توجيه i18n مركزي للعربية والإنجليزية.
 
-## القرارات
-- اعتماد المحلية أولًا في تحديث الحالة.
-- مزامنة مرحلية مع إعادة ربط المعرفات.
-- Tailwind 4 + متغيرات زجاجية مخصصة للتحكم البصري.
-- CSS Logical Properties لتقليل مشكلات RTL.
+## أدلة موثقة من الكود
+- Stores: `src/store/project-store.ts`, `src/store/task-store.ts`, `src/store/client-store.ts`, `src/store/note-store.ts`
+- Auth/refresh: `src/store/auth.ts`, `src/app/api/auth/refresh/route.ts`
+- OAuth callback: `src/app/api/auth/google/callback/route.ts`
+- Data layer: `src/lib/db.ts`
+- i18n runtime: `src/i18n/request.ts`, `src/proxy.ts`
 
 ## المفاضلات
-- مرونة أعلى مقابل عبء معماري أكبر.
-- صحة البيانات أولًا حتى لو زاد طول التنفيذ.
-- نظام تصميم مخصص يحتاج حوكمة مستمرة.
-
-## الأدلة
-- سجل قرارات أساسي: `decisions.md`
-- مثال المزامنة: `../code-samples/sync-service.ts`
-- مخطط بنية المكونات: `../diagrams/03-component-tree.mmd`
+- تحكم أكبر مقابل عبء صيانة أعلى.
+- دعم الضيف + المستخدم الموثق يزيد تعقيد النظام.
 
 ## التالي
-انتقل إلى `06-Challenges-Solutions.ar.md`.
+`06-Challenges-Solutions.ar.md`
 
 عودة: [README](../README.ar.md)

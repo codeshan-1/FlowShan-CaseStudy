@@ -3,27 +3,24 @@
 اللغة: [English](06-Challenges-Solutions.md)
 
 ## الهدف
-عرض أصعب التحديات التنفيذية وكيف تم التعامل معها عمليًا.
+عرض أكبر المخاطر التنفيذية وكيف تم احتواؤها.
 
-## السياق
-التحدي الأكبر لم يكن شكل الواجهة فقط، بل اتساق البيانات وجودة السلوك عبر المنصات.
+## التحدي 1: ترحيل علائقي من الضيف للسحابة
+- الخطر: orphan records بعد تغيير IDs.
+- المعالجة: mapping maps واضحة أثناء المزامنة.
+- الدليل: `src/lib/sync-service.ts`
 
-## القرارات
-- معالجة المزامنة بمراحل حتمية وجداول Mapping.
-- حماية التعقيد البصري بحدود مكونات واضحة.
-- توحيد RTL عبر خصائص CSS المنطقية وأنماط مشتركة.
+## التحدي 2: واجهة كثيفة + سرعة
+- الخطر: بطء في board/calendar/notes.
+- المعالجة: local-first + memoization + تنظيم rendering.
+- الدليل: `src/app/[locale]/(platform)/tasks/page.tsx`, `src/components/calendar/interactive-calendar.tsx`
 
-## المفاضلات
-- كود إضافي في طبقة المزامنة.
-- دورات QA أكبر للتجاوب + RTL.
-- سرعة إضافة الميزات تقل قليلًا لصالح الاستقرار.
-
-## الأدلة
-- مراحل المزامنة: `../diagrams/02-data-sync.mmd`
-- هيكل المكونات: `../diagrams/03-component-tree.mmd`
-- جودة الموبايل: `../assets/screenshots/mobile-dashboard.png`
+## التحدي 3: اتساق ثنائي اللغة
+- الخطر: اختلاف السلوك بين EN/AR.
+- المعالجة: routing + middleware مركزي.
+- الدليل: `src/i18n/routing.ts`, `src/proxy.ts`
 
 ## التالي
-انتقل إلى `07-Performance-Optimization.ar.md`.
+`07-Performance-Optimization.ar.md`
 
 عودة: [README](../README.ar.md)

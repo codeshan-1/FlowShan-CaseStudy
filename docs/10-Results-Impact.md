@@ -3,29 +3,25 @@
 Language: [العربية](10-Results-Impact.ar.md)
 
 ## Purpose
-Summarize measurable and observable outcomes from product and engineering decisions.
+Describe outcomes that are directly observable in product behavior and architecture.
 
-## Context
-Success in FlowShan is defined by three outcomes:
-- interaction confidence,
-- architecture reliability,
-- presentation quality for real users.
+## Observable Outcomes
+1. Usable guest flow before signup.
+2. Local-first interaction in major operational surfaces.
+3. Unified EN/AR routing and message loading.
+4. Rich module coverage: projects, tasks, clients, notes, calendar, dashboard.
+5. Strong documentation traceability from feature claim to source file.
 
-## Decisions
-- Measure outcomes through UX stability and execution consistency, not only visual polish.
-- Evaluate product quality across guest and authenticated flows.
-- Track whether bilingual and responsive behavior remain regression-free.
+## Verified Evidence
+- Guest auth state: `src/store/auth.ts`
+- Sync migration path: `src/lib/sync-service.ts`
+- Bilingual runtime: `src/i18n/request.ts`, `src/proxy.ts`
+- Module pages: `src/app/[locale]/(platform)/*`
 
-## Trade-offs
-- Some outcomes are qualitative unless analytics is expanded.
-- Strong reliability emphasis can slow rapid feature experiments.
-- Visual ambition requires sustained quality investment.
-
-## Evidence
-- Core UX captures: `../assets/screenshots/dashboard-hero.png`, `../assets/screenshots/mobile-dashboard.png`
-- Stability narratives: `06-Challenges-Solutions.md`, `08-Testing-Quality.md`
+## Impact Framing
+FlowShan demonstrates a practical local-first architecture in a visually ambitious product without collapsing usability.
 
 ## Next
-Continue to `11-Product-Scope-Requirements.md` for explicit scope boundaries.
+`11-Product-Scope-Requirements.md`
 
 Back: [README](../README.md)

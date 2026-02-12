@@ -3,28 +3,26 @@
 Language: [العربية](01-Overview.ar.md)
 
 ## Purpose
-Define what FlowShan is, who it serves, and what design/engineering thesis the project proves.
+Define FlowShan's product and engineering thesis.
 
 ## Context
-FlowShan is a productivity SaaS focused on projects, tasks, clients, notes, and calendar workflows.
-The product targets users who need speed and clarity without sacrificing visual quality.
+FlowShan is a bilingual productivity app with modules for dashboard, projects, tasks, clients, notes, and calendar.
 
-## Decisions
-- Build around a local-first interaction model for instant UX.
-- Use a cinematic glass-based design language to differentiate from generic dashboards.
-- Treat bilingual support (EN/AR) as a core architecture requirement.
+## Core Thesis
+- Immediate UX comes from local-first interaction.
+- Data durability comes from authenticated API + PostgreSQL persistence.
+- A premium visual system can coexist with practical workflow speed.
+
+## Verified Code Evidence
+- Dashboard orchestration: `src/app/[locale]/(platform)/dashboard/page.tsx`
+- Feature surfaces: `src/app/[locale]/(platform)/projects/page.tsx`, `src/app/[locale]/(platform)/tasks/page.tsx`, `src/app/[locale]/(platform)/notes/page.tsx`, `src/app/[locale]/(platform)/calendar/page.tsx`
+- UI system breadth: `src/components/*` (61 components)
 
 ## Trade-offs
-- Higher implementation complexity versus template-based UI systems.
-- More careful state management required to keep local and remote data consistent.
-- Additional QA overhead for RTL + responsive + motion-heavy surfaces.
-
-## Evidence
-- Hero and product identity: `../assets/banners/main-hero.png`
-- Core UI proof: `../assets/screenshots/dashboard-hero.png`
-- Architecture map: `03-Solution-Architecture.md`
+- Visual richness requires stronger performance discipline.
+- Local-first flows require sync correctness guarantees.
 
 ## Next
-Continue to `02-Problem-Statement.md` for constraints and success criteria.
+`02-Problem-Statement.md`
 
 Back: [README](../README.md)

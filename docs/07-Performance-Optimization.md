@@ -3,27 +3,24 @@
 Language: [العربية](07-Performance-Optimization.ar.md)
 
 ## Purpose
-Explain the performance strategy used to keep the product responsive under real workflow load.
+Explain practical performance choices used in core interaction paths.
 
-## Context
-FlowShan combines high visual density with frequent drag/drop and filtering operations.
+## Optimization Strategy
+1. Keep interaction-critical updates local first.
+2. Use memoized filtering/grouping in task/calendar surfaces.
+3. Split board/list views and render only active subsets.
+4. Use motion intentionally at high-value transitions.
 
-## Decisions
-- Keep interaction-critical updates local first.
-- Reduce avoidable rerenders via clearer state boundaries.
-- Prefer lightweight visual patterns that preserve frame stability.
-- Use staged hydration patterns to reduce UX flicker.
+## Verified Code Evidence
+- Task memoization/filtering: `src/app/[locale]/(platform)/tasks/page.tsx`
+- Calendar grouped computations and drag events: `src/components/calendar/interactive-calendar.tsx`
+- Notes transition system: `src/app/[locale]/(platform)/notes/page.tsx`, `src/components/notes/note-grid-view.tsx`
+- Visual proof: `../assets/banners/performance-lighthouse.png`
 
-## Trade-offs
-- Optimization introduces extra architecture constraints.
-- Motion must be tuned carefully to avoid overdraw on lower-end devices.
-- Some implementation choices prioritize consistency over micro-optimizations.
-
-## Evidence
-- Lighthouse/quality capture: `../assets/banners/performance-lighthouse.png`
-- Calendar and board stress surfaces: `../assets/screenshots/calendar-heatmap.png`, `../assets/screenshots/kanban-board.png`
+## Constraint Note
+Build can fail in restricted environments due to blocked Google Fonts (environment issue, not app logic).
 
 ## Next
-Continue to `08-Testing-Quality.md` for validation methodology.
+`08-Testing-Quality.md`
 
 Back: [README](../README.md)

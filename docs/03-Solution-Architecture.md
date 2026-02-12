@@ -3,31 +3,27 @@
 Language: [العربية](03-Solution-Architecture.ar.md)
 
 ## Purpose
-Explain the selected architecture and how local-first interaction is reconciled with cloud persistence.
+Describe how FlowShan combines local responsiveness with cloud persistence.
 
-## Context
-FlowShan uses a hybrid model:
-- local state for immediate interaction,
-- API-backed persistence for authenticated users,
-- deterministic sync for migration from guest data.
+## Architecture Layers
+1. Frontend layer (Next.js App Router + component system)
+2. State layer (Zustand stores)
+3. API layer (`src/app/api/*`)
+4. Data layer (Prisma adapter + PostgreSQL)
 
-## Decisions
-- Separate system into Frontend, Sync/API, and Database layers.
-- Use sequential sync phases to preserve relations (clients -> projects -> tasks -> notes).
-- Keep state orchestration explicit through store-driven updates.
+## Verified Code Evidence
+- Data client setup: `src/lib/db.ts`, `src/lib/prisma.ts`
+- Projects API: `src/app/api/projects/route.ts`
+- Tasks API: `src/app/api/tasks/route.ts`
+- Notes/Clients APIs: `src/app/api/notes/route.ts`, `src/app/api/clients/route.ts`
+- Sync sequencing: `src/lib/sync-service.ts`
+- Diagram sources: `../diagrams/01-system-flow.mmd`, `../diagrams/02-data-sync.mmd`, `../diagrams/04-database-schema.mmd`
 
 ## Trade-offs
-- Deterministic sync is safer but more verbose to implement.
-- State orchestration can become complex if boundaries are not enforced.
-- Operational debugging requires clear sync instrumentation.
-
-## Evidence
-- System diagram source: `../diagrams/01-system-flow.mmd`
-- Sync sequence source: `../diagrams/02-data-sync.mmd`
-- Database model source: `../diagrams/04-database-schema.mmd`
-- Visual architecture assets: `../assets/banners/system-diagram.png`, `../assets/banners/sync-timeline.png`
+- Safer sync orchestration adds implementation complexity.
+- Slug self-healing in APIs improves resilience but adds extra server work.
 
 ## Next
-Continue to `04-Key-Features.md` for product-level capabilities.
+`04-Key-Features.md`
 
 Back: [README](../README.md)

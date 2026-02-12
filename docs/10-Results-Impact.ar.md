@@ -3,29 +3,25 @@
 اللغة: [English](10-Results-Impact.md)
 
 ## الهدف
-تلخيص النتائج العملية الناتجة عن القرارات المنتجية والهندسية.
+عرض نتائج يمكن ملاحظتها مباشرة في السلوك المعماري وتجربة الاستخدام.
 
-## السياق
-النجاح في FlowShan يُقاس عبر:
-- ثقة المستخدم أثناء التفاعل،
-- موثوقية المعمارية،
-- جودة العرض النهائي.
+## نتائج قابلة للرصد
+1. استخدام فعلي قبل التسجيل عبر وضع الضيف.
+2. تفاعل محلي سريع في الوحدات الأساسية.
+3. تشغيل ثنائي اللغة عبر i18n routing/message loading.
+4. تغطية وحدات منتج كاملة (projects/tasks/clients/notes/calendar/dashboard).
+5. قابلية تتبع واضحة من claim إلى ملف كود.
 
-## القرارات
-- تقييم النجاح باستقرار التجربة وليس بالمظهر فقط.
-- التحقق من جودة سيناريوهات الضيف والحساب معًا.
-- متابعة سلامة ثنائية اللغة والتجاوب بدون تراجعات.
+## أدلة موثقة
+- Guest auth state: `src/store/auth.ts`
+- Sync migration: `src/lib/sync-service.ts`
+- i18n runtime: `src/i18n/request.ts`, `src/proxy.ts`
+- صفحات الوحدات: `src/app/[locale]/(platform)/*`
 
-## المفاضلات
-- بعض النتائج تظل نوعية بدون تحليلات أعمق.
-- التركيز على الاعتمادية قد يبطّئ تجارب ميزات سريعة.
-- الطموح البصري يحتاج استثمار جودة مستمر.
-
-## الأدلة
-- شواهد UX: `../assets/screenshots/dashboard-hero.png`, `../assets/screenshots/mobile-dashboard.png`
-- مراجع الاستقرار: `06-Challenges-Solutions.ar.md`, `08-Testing-Quality.ar.md`
+## الخلاصة
+FlowShan يثبت عمليًا أن local-first architecture ممكن تشتغل داخل منتج بصري غني بدون فقدان قابلية الاستخدام.
 
 ## التالي
-انتقل إلى `11-Product-Scope-Requirements.ar.md`.
+`11-Product-Scope-Requirements.ar.md`
 
 عودة: [README](../README.ar.md)
