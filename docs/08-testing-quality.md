@@ -52,6 +52,14 @@ Our most critical test case is the **Onboarding Funnel**:
 This is tested manually before every major deployment.
 
 <br/>
+
+## 4. ♿ Accessibility (A11y) Standards
+FlowShan isn't just about looks; it's about inclusion.
+- **Semantic HTML:** We enforce proper heading hierarchy (`h1` → `h2` → `h3`) to ensure screen readers can navigate structured content.
+- **Accessible Names:** Every interactive element (like the mobile menu toggle) includes an `aria-label` to provide context for non-visual users.
+- **Keyboard Navigation:** High-contrast focus states and logical tab orders are integrated across the dashboard.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

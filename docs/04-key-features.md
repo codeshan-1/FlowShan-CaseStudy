@@ -75,6 +75,16 @@ The single pane of glass for your productivity.
 </div>
 
 <br/>
+
+## 5. 🛡️ Safety Net: Soft Delete & Undo
+User errors are inevitable, so we built a **non-destructive** deletion flow.
+- **Features:**
+  - **Soft Deletion:** Tasks are never hard-deleted instantly; they are flagged in the database.
+  - **5-Second Window:** An interactive "Undo" toast appears immediately after deletion.
+  - **One-Click Restore:** Clicking "Undo" triggers the `restoreTask` logic, bringing the item back with no page refresh.
+- **Tech:** `sonner` for Toasts + `restoreTask` store action.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>
