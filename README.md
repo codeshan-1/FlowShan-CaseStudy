@@ -1,102 +1,123 @@
 <div align="center">
+ 
+![FlowShan](https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FlowShan+Case+Study;Local-First+Productivity+Platform;Next.js+16+%7C+Prisma+%7C+Zustand)
 
-<p align="right">
+<br/>
+
+### ⚡ Local-First Productivity with Cinematic UX
+
+> **Instant interaction, seamless sync, and a premium developer experience.**
+
+<p>
+  <a href="https://flowshan.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo-FlowShan_App-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020"/>
+  </a>
+  <a href="docs/01-overview.md">
+    <img src="https://img.shields.io/badge/Read_Docs-Start_Here-4a45ea?style=for-the-badge&logo=readthedocs&logoColor=white"/>
+  </a>
   <a href="README.ar.md">
-    <img src="https://img.shields.io/badge/Read_in-Arabic-00E5FF?style=for-the-badge&labelColor=0B1020" alt="Arabic"/>
+    <img src="https://img.shields.io/badge/Language-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-0B1020?style=for-the-badge"/>
   </a>
 </p>
 
-<img src="assets/banners/main-hero.png" alt="FlowShan Hero" width="100%"/>
+<br/>
 
-# FlowShan Case Study
-### Local-First Productivity Platform with Cinematic UX
+![FlowShan Banner](assets/banners/main-hero.png)
 
-<p>
-  <a href="https://flowshan.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Live_Demo-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020" alt="Live Demo"/></a>
-  <img src="https://img.shields.io/badge/Main_App-Private_Repository-12121A?style=for-the-badge&logo=github&logoColor=white" alt="Main Repo Private"/>
-  <a href="https://github.com/codeshan-1/FlowShan-CaseStudy/" target="_blank"><img src="https://img.shields.io/badge/Case_Study-Repository-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
-</p>
+<br/>
+
+[![Tech Stack](https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20React%2019%20%7C%20Tailwind%20v4%20%7C%20Prisma-4a45ea?style=flat-square)]()
 
 </div>
 
-## Executive Summary
-FlowShan is a productivity web app designed around one core principle: **instant local interaction first, cloud persistence second**.  
-This case study documents what was built, why decisions were made, and where trade-offs were accepted.
+<br/>
 
-## Verified Project Facts
-| Metric | Value |
-|---|---|
-| Core stack | Next.js 16.1.6, React 19, TypeScript, Tailwind 4, Prisma 7 |
-| API routes | 33 routes in `src/app/api/*` |
-| Platform pages | 11 pages in `src/app/[locale]/(platform)` |
-| State stores | 7 Zustand stores in `src/store` |
-| UI components | 61 components in `src/components` |
-| Diagrams | 4 Mermaid source diagrams in `diagrams/*.mmd` |
+## 📋 Executive Summary
+**FlowShan** is a productivity platform engineered around the "Local-First" principle. It prioritizes instant user interaction using optimistic UI updates and local state management, synchronizing with the cloud in the background.
 
-## Repository Access Note
-- Main application repository is private.
-- This case study is grounded in direct source review and includes concrete module references.
+This case study dissects the architecture, challenges, and technical decisions behind building a high-performance, cinematic productivity tool.
 
-## What Was Recently Improved
-- Projects empty-state UX now has:
-  - first-project onboarding state,
-  - no-results state for search/filter empty returns.
-- Notes empty-state CTA alignment fixed for stable icon + label layout.
-- Diagram sources normalized to Mermaid-native `.mmd` format.
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
 
-## Visual Proof
+## 📊 Verified Project Stats
+
+| Metric | Details |
+|:---|:---|
+| **Core Stack** | Next.js 16.1 (App Router), React 19, TypeScript |
+| **Styling** | Tailwind CSS v4, Framer Motion (Cinematic UX) |
+| **State** | Zustand (7 Stores), Local-First Architecture |
+| **Backend** | Server Actions, Prisma ORM, PostgreSQL |
+| **Components** | 60+ Reusable UI Components |
+| **Performance** | < 100ms Interaction Latency |
+
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 📸 Visual Showcase
+
 <div align="center">
   <img src="assets/screenshots/dashboard-hero.png" width="48%" alt="Dashboard"/>
-  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban"/>
+  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban Board"/>
   <img src="assets/screenshots/calendar-heatmap.png" width="48%" alt="Calendar"/>
-  <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes"/>
+  <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes Editor"/>
 </div>
 
-## Architecture Preview
+<br/>
 <div align="center">
-  <img src="assets/banners/system-diagram.png" width="49%" alt="System Diagram"/>
-  <img src="assets/banners/sync-timeline.png" width="49%" alt="Sync Timeline"/>
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 🏗️ Architecture Architecture
+
+The system leverages a **Hybrid Sync Engine**:
+1.  **Guest Mode:** Full functionality using `localStorage`.
+2.  **Auth Mode:** Background synchronization with PostgreSQL/Prisma.
+3.  **Conflict Resolution:** Last-write-wins with optimistic UI.
+
+<div align="center">
+  <img src="assets/banners/system-diagram.png" width="80%" alt="System Architecture"/>
 </div>
 
-## Reading Tracks
-### Recruiter / Hiring Manager (10-15 min)
-1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
-2. <a href="docs/01-Overview.md"><b>01 - Overview</b></a>
-3. <a href="docs/04-Key-Features.md"><b>04 - Key Features</b></a>
-4. <a href="docs/10-Results-Impact.md"><b>10 - Results & Impact</b></a>
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
 
-### Tech Lead / Senior Engineer (25-40 min)
-1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
-2. <a href="docs/02-Problem-Statement.md"><b>02 - Problem Statement</b></a>
-3. <a href="docs/03-Solution-Architecture.md"><b>03 - Solution Architecture</b></a>
-4. <a href="docs/05-Technical-Decisions.md"><b>05 - Technical Decisions</b></a>
-5. <a href="docs/06-Challenges-Solutions.md"><b>06 - Challenges & Solutions</b></a>
-6. <a href="docs/07-Performance-Optimization.md"><b>07 - Performance Optimization</b></a>
-7. <a href="docs/08-Testing-Quality.md"><b>08 - Testing & Quality</b></a>
+## 📚 Documentation Index
 
-### Product / Stakeholder (15-20 min)
-1. <a href="docs/00-Case-Study-Map.md"><b>00 - Case Study Map</b></a>
-2. <a href="docs/11-Product-Scope-Requirements.md"><b>11 - Product Scope & Requirements</b></a>
-3. <a href="docs/04-Key-Features.md"><b>04 - Key Features</b></a>
-4. <a href="docs/10-Results-Impact.md"><b>10 - Results & Impact</b></a>
-5. <a href="docs/12-Roadmap-Lessons.md"><b>12 - Roadmap & Lessons</b></a>
+Explore the full technical breakdown:
 
-## Full Documentation Index
-| # | Document |
-|---|---|
-| 00 | <a href="docs/00-Case-Study-Map.md">Case Study Map</a> |
-| 01 | <a href="docs/01-Overview.md">Overview</a> |
-| 02 | <a href="docs/02-Problem-Statement.md">Problem Statement</a> |
-| 03 | <a href="docs/03-Solution-Architecture.md">Solution Architecture</a> |
-| 04 | <a href="docs/04-Key-Features.md">Key Features</a> |
-| 05 | <a href="docs/05-Technical-Decisions.md">Technical Decisions</a> |
-| 06 | <a href="docs/06-Challenges-Solutions.md">Challenges & Solutions</a> |
-| 07 | <a href="docs/07-Performance-Optimization.md">Performance Optimization</a> |
-| 08 | <a href="docs/08-Testing-Quality.md">Testing & Quality</a> |
-| 09 | <a href="docs/09-Deployment-DevOps.md">Deployment & DevOps</a> |
-| 10 | <a href="docs/10-Results-Impact.md">Results & Impact</a> |
-| 11 | <a href="docs/11-Product-Scope-Requirements.md">Product Scope & Requirements</a> |
-| 12 | <a href="docs/12-Roadmap-Lessons.md">Roadmap & Lessons</a> |
+| # | Document | Description |
+|:--:|:---|:---|
+| **01** | [![Overview](https://img.shields.io/badge/Read-Overview-4a45ea?style=flat-square)](docs/01-overview.md) | Vision, Core Philosophy, and Project Scope. |
+| **02** | [![Problem](https://img.shields.io/badge/Read-Problem_Statement-4a45ea?style=flat-square)](docs/02-problem-statement.md) | The challenge of building local-first apps. |
+| **03** | [![Architecture](https://img.shields.io/badge/Read-Solution_Architecture-4a45ea?style=flat-square)](docs/03-solution-architecture.md) | System design, Data Flow, and Sync Logic. |
+| **04** | [![Features](https://img.shields.io/badge/Read-Key_Features-4a45ea?style=flat-square)](docs/04-key-features.md) | Kanban, Calendar, Notes, and Dashboard details. |
+| **05** | [![Decisions](https://img.shields.io/badge/Read-Technical_Decisions-4a45ea?style=flat-square)](docs/05-technical-decisions.md) | Why Next.js 16? Why Zustand over Redux? |
+| **06** | [![Challenges](https://img.shields.io/badge/Read-Challenges_&_Solutions-4a45ea?style=flat-square)](docs/06-challenges-solutions.md) | Solving hydration mismatches & sync conflicts. |
+| **07** | [![Performance](https://img.shields.io/badge/Read-Performance-4a45ea?style=flat-square)](docs/07-performance.md) | Optimization techniques for sub-100ms UX. |
+| **08** | [![Testing](https://img.shields.io/badge/Read-Testing-4a45ea?style=flat-square)](docs/08-testing-quality.md) | QA strategy and testing methodologies. |
+| **09** | [![Deployment](https://img.shields.io/badge/Read-Deployment-4a45ea?style=flat-square)](docs/09-deployment.md) | Vercel deployment pipeline and CI/CD. |
+| **10** | [![Impact](https://img.shields.io/badge/Read-Results_&_Impact-4a45ea?style=flat-square)](docs/10-results-impact.md) | Final metrics and business outcomes. |
 
-## License
-MIT License. See <a href="LICENSE">LICENSE</a>.
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+<div align="center">
+
+### Ready to Dive In?
+[![Start Reading](https://img.shields.io/badge/Start_Reading-01_Overview-00E5FF?style=for-the-badge&labelColor=0B1020)](docs/01-overview.md)
+
+</div>

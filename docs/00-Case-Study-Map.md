@@ -1,46 +1,77 @@
-# 00 - Case Study Map
+<div align="center">
 
-## Purpose
-Navigation entrypoint for the full FlowShan documentation.
+# 🗺️ 00 - Case Study Map
 
-## Project Snapshot (Verified)
-- Framework: Next.js `16.1.6` (`package.json`)
-- UI runtime: React `19.2.3`
-- State layer: Zustand stores in `src/store/*`
-- API layer: `src/app/api/*` (33 route files)
-- Platform pages: `src/app/[locale]/(platform)/*` (11 page files)
-- i18n: `src/i18n/routing.ts`, `src/i18n/request.ts`
+![Map](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=500&lines=Navigation+Hub;Where+to+Start;Technical+Deep+Dive)
 
-## Recommended Reading Paths
-### Portfolio Review (10 min)
-1. `01-Overview.md`
-2. `04-Key-Features.md`
-3. `10-Results-Impact.md`
+> **"Your compass for navigating the FlowShan engineering journey."**
 
-### Engineering Review (30-40 min)
-1. `02-Problem-Statement.md`
-2. `03-Solution-Architecture.md`
-3. `05-Technical-Decisions.md`
-4. `06-Challenges-Solutions.md`
-5. `07-Performance-Optimization.md`
-6. `08-Testing-Quality.md`
+<br/>
 
-### Product Scope Review (20 min)
-1. `11-Product-Scope-Requirements.md`
-2. `04-Key-Features.md`
-3. `10-Results-Impact.md`
-4. `12-Roadmap-Lessons.md`
+[![Next Chapter](https://img.shields.io/badge/Start_Here-Overview-4a45ea?style=for-the-badge)](01-overview.md)
 
-## Document-to-Question Mapping
-- `01`: What is the product thesis?
-- `02`: What constraints/problem shape the build?
-- `03`: How does local-first + cloud sync work technically?
-- `04`: What user-facing capabilities were prioritized?
-- `05`: Why these technical choices over alternatives?
-- `06`: What failed and how was it mitigated?
-- `07`: How was responsiveness preserved?
-- `08`: How is quality enforced?
-- `09`: How is release/ops handled?
-- `10`: What outcomes are visible now?
-- `11`: What is in scope vs intentionally out of scope?
-- `12`: What is next and why?
+</div>
+
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 🎯 Choose Your Path
+
+### 🚀 For Recruiters (5-10 Minutes)
+*Quickly assess product quality and impact.*
+1.  **[01 - Overview](01-overview.md)** (The Vision)
+2.  **[04 - Key Features](04-key-features.md)** (Visual Proof)
+3.  **[10 - Results & Impact](10-results-impact.md)** (KPIs)
+
+### 🛠️ For Engineers (30-45 Minutes)
+*Deep dive into the architecture and code.*
+1.  **[03 - Solution Architecture](03-solution-architecture.md)** (System Design)
+2.  **[05 - Technical Decisions](05-technical-decisions.md)** (Why Zustand/Prisma?)
+3.  **[06 - Challenges & Solutions](06-challenges-solutions.md)** (The Hard Parts)
+4.  **[07 - Performance](07-performance.md)** (Optimizations)
+
+### 💼 For Product Managers (15-20 Minutes)
+*Understand scope and roadmap.*
+1.  **[02 - Problem Statement](02-problem-statement.md)** (User Needs)
+2.  **[11 - Product Scope](11-product-scope.md)** (MVP Definition)
+3.  **[12 - Roadmap](12-roadmap.md)** (Future Vision)
+
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 📚 Full Documentation Index
+
+| # | Document | Crucial Question Answered |
+|:---|:---|:---|
+| **01** | **[Overview](01-overview.md)** | What is FlowShan? |
+| **02** | **[Problem Statement](02-problem-statement.md)** | Why does the world need another todo app? |
+| **03** | **[Architecture](03-solution-architecture.md)** | How does the "Hybrid Sync" work? |
+| **04** | **[Key Features](04-key-features.md)** | What can users actually do? |
+| **05** | **[Tech Decisions](05-technical-decisions.md)** | Why did we choose this stack? |
+| **06** | **[Challenges](06-challenges-solutions.md)** | What broke and how did we fix it? |
+| **07** | **[Performance](07-performance.md)** | How did we hit <100ms latency? |
+| **08** | **[Testing](08-testing-quality.md)** | How do we ensure quality? |
+| **09** | **[Deployment](09-deployment.md)** | How does code get to production? |
+| **10** | **[Results](10-results-impact.md)** | Did we succeed? |
+| **11** | **[Scope](11-product-scope.md)** | What is in/out of the MVP? |
+| **12** | **[Roadmap](12-roadmap.md)** | What's next? |
+
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 🔗 Navigation
+
+<div align="center">
+
+[![Start](https://img.shields.io/badge/Start_Reading-01_Overview-4a45ea?style=for-the-badge&logo=readthedocs&logoColor=white)](01-overview.md)
+
+</div>

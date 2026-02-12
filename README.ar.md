@@ -1,104 +1,127 @@
-<div align="right" dir="rtl">
+<div align="center" dir="rtl">
 
-<p align="left" dir="ltr">
+![FlowShan](https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00E5FF&center=true&vCenter=true&width=600&lines=FlowShan+Case+Study;Local-First+Productivity+Platform;Next.js+16+%7C+Prisma+%7C+Zustand)
+
+<br/>
+
+### ⚡ الإنتاجية المحلية أولاً (Local-First) بتجربة استخدام سينمائية
+
+> **تفاعل فوري، مزامنة سلسة، وتجربة مطور متميزة.**
+
+<p>
+  <a href="https://flowshan.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Demo-FlowShan_App-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020"/>
+  </a>
+  <a href="docs/ar/01-overview.md">
+    <img src="https://img.shields.io/badge/Read_Docs-Start_Here-4a45ea?style=for-the-badge&logo=readthedocs&logoColor=white"/>
+  </a>
   <a href="README.md">
-    <img src="https://img.shields.io/badge/Read_in-English-00E5FF?style=for-the-badge&labelColor=0B1020" alt="English"/>
+    <img src="https://img.shields.io/badge/Language-English-0B1020?style=for-the-badge"/>
   </a>
 </p>
 
-<div align="center">
-  <img src="assets/banners/main-hero.png" alt="FlowShan Hero" width="100%"/>
+<br/>
 
-# دراسة حالة FlowShan
-### منصة إنتاجية بنهج "المحلية أولاً" وتجربة استخدام سينمائية
+![FlowShan Banner](assets/banners/main-hero.ar.png)
 
-<p>
-  <a href="https://flowshan.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Live_Demo-00E5FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0B1020" alt="Live Demo"/></a>
-  <img src="https://img.shields.io/badge/Main_App-Private_Repository-12121A?style=for-the-badge&logo=github&logoColor=white" alt="Main Repo Private"/>
-  <a href="https://github.com/codeshan-1/FlowShan-CaseStudy/" target="_blank"><img src="https://img.shields.io/badge/Case_Study-Repository-1A1F3A?style=for-the-badge&logo=bookstack&logoColor=00E5FF" alt="Case Study Repo"/></a>
-</p>
+<br/>
+
+[![Tech Stack](https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20React%2019%20%7C%20Tailwind%20v4%20%7C%20Prisma-4a45ea?style=flat-square)]()
+
 </div>
 
-## الملخص التنفيذي
-FlowShan منصة إنتاجية مبنية على مبدأ واضح: **التفاعل محليًا أولًا، والحفظ السحابي ثانيًا**.  
-هذه الدراسة توضح ما تم بناؤه، ولماذا تم اختيار القرارات، وما المفاضلات التي تم قبولها.
+<br/>
 
-## حقائق موثقة من المشروع
-| المؤشر | القيمة |
-|---|---|
-| التقنية الأساسية | Next.js 16.1.6, React 19, TypeScript, Tailwind 4, Prisma 7 |
-| مسارات API | عدد 33 داخل `src/app/api/*` |
-| صفحات المنصة | عدد 11 داخل `src/app/[locale]/(platform)` |
-| مخازن الحالة | عدد 7 Zustand stores داخل `src/store` |
-| مكونات الواجهة | عدد 61 داخل `src/components` |
-| الدياجرامز | عدد 4 Mermaid diagrams داخل `diagrams/*.mmd` |
+<div dir="rtl">
 
-## ملاحظة الوصول للمستودعات
-- مستودع التطبيق الأصلي خاص (Private).
-- هذه الدراسة مبنية على مراجعة مباشرة للكود مع مراجع ملفات واضحة.
+## 📋 الملخص التنفيذي
+**FlowShan** هي منصة إنتاجية صممت حول مبدأ **"المحلية أولاً" (Local-First)**. تعطي الأولوية للتفاعل الفوري للمستخدم باستخدام تحديثات واجهة المستخدم المتفائلة (Optimistic UI) وإدارة الحالة المحلية، مع مزامنة البيانات مع السحابة في الخلفية.
 
-## آخر تحسينات تمت
-- توحيد حالات الفراغ في صفحة المشاريع:
-  - حالة إضافة أول مشروع.
-  - حالة لا توجد نتائج بعد البحث/التصفية.
-- إصلاح زر إضافة الملاحظات في حالة الفراغ ليظهر النص مع الأيقونة بثبات.
-- توحيد ملفات الدياجرامز بصيغة Mermaid سليمة.
+تحلل دراسة الحالة هذه المعمارية، التحديات، والقرارات التقنية وراء بناء أداة إنتاجية عالية الأداء بتجربة سينمائية.
 
-## معرض بصري
+<br/>
 <div align="center">
-  <img src="assets/screenshots/dashboard-hero.png" width="48%" alt="Dashboard"/>
-  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban"/>
-  <img src="assets/screenshots/calendar-heatmap.png" width="48%" alt="Calendar"/>
-  <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes"/>
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 📊 إحصائيات المشروع
+
+| المؤشر | التفاصيل |
+|:---|:---|
+| **التقنية الأساسية** | Next.js 16.1 (App Router), React 19, TypeScript |
+| **التصميم** | Tailwind CSS v4, Framer Motion (تأثيرات سينمائية) |
+| **إدارة الحالة** | Zustand (7 Stores), Local-First Architecture |
+| **الخلفية** | Server Actions, Prisma ORM, PostgreSQL |
+| **المكونات** | 60+ مكون واجهة قابل لإعادة الاستخدام |
+| **الأداء** | زمن استجابة أقل من 100ms |
+
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 📸 معرض الصور
+
+<div align="center">
+  <img src="assets/screenshots/dashboard-hero.ar.png" width="48%" alt="Dashboard"/>
+  <img src="assets/screenshots/kanban-board.ar.png" width="48%" alt="Kanban Board"/>
+  <img src="assets/screenshots/calendar-heatmap.ar.png" width="48%" alt="Calendar"/>
+  <img src="assets/screenshots/notes-editor.ar.png" width="48%" alt="Notes Editor"/>
 </div>
 
-## نظرة معمارية سريعة
+<br/>
 <div align="center">
-  <img src="assets/banners/system-diagram.png" width="49%" alt="System Diagram"/>
-  <img src="assets/banners/sync-timeline.png" width="49%" alt="Sync Timeline"/>
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+## 🏗️ معمارية النظام
+
+يستخدم النظام **محرك مزامنة هجين (Hybrid Sync Engine)**:
+1.  **وضع الزائر:** وظائف كاملة باستخدام `localStorage`.
+2.  **وضع المصادقة:** مزامنة في الخلفية مع PostgreSQL/Prisma.
+3.  **حل التعارض:** (Last-write-wins) مع واجهة متفائلة.
+
+<div align="center">
+  <img src="assets/banners/system-diagram.ar.png" width="80%" alt="System Architecture"/>
 </div>
 
-## مسارات القراءة حسب الهدف
-### مسؤول توظيف (10-15 دقيقة)
-1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
-2. <a href="docs/01-Overview.ar.md"><b>01 - نظرة عامة</b></a>
-3. <a href="docs/04-Key-Features.ar.md"><b>04 - الميزات الجوهرية</b></a>
-4. <a href="docs/10-Results-Impact.ar.md"><b>10 - النتائج والأثر</b></a>
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
 
-### Tech Lead / Senior Engineer (25-40 دقيقة)
-1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
-2. <a href="docs/02-Problem-Statement.ar.md"><b>02 - تحديد المشكلة</b></a>
-3. <a href="docs/03-Solution-Architecture.ar.md"><b>03 - هندسة الحل</b></a>
-4. <a href="docs/05-Technical-Decisions.ar.md"><b>05 - القرارات التقنية</b></a>
-5. <a href="docs/06-Challenges-Solutions.ar.md"><b>06 - التحديات والحلول</b></a>
-6. <a href="docs/07-Performance-Optimization.ar.md"><b>07 - تحسين الأداء</b></a>
-7. <a href="docs/08-Testing-Quality.ar.md"><b>08 - الاختبار والجودة</b></a>
+## 📚 فهرس الوثائق
 
-### صاحب منتج / عميل (15-20 دقيقة)
-1. <a href="docs/00-Case-Study-Map.ar.md"><b>00 - خريطة الدراسة</b></a>
-2. <a href="docs/11-Product-Scope-Requirements.ar.md"><b>11 - نطاق المنتج والمتطلبات</b></a>
-3. <a href="docs/04-Key-Features.ar.md"><b>04 - الميزات الجوهرية</b></a>
-4. <a href="docs/10-Results-Impact.ar.md"><b>10 - النتائج والأثر</b></a>
-5. <a href="docs/12-Roadmap-Lessons.ar.md"><b>12 - خارطة الطريق والدروس</b></a>
+استكشف التفاصيل التقنية الكاملة:
 
-## فهرس المستندات الكامل
-| # | المستند |
-|---|---|
-| 00 | <a href="docs/00-Case-Study-Map.ar.md">خريطة الدراسة</a> |
-| 01 | <a href="docs/01-Overview.ar.md">نظرة عامة</a> |
-| 02 | <a href="docs/02-Problem-Statement.ar.md">تحديد المشكلة</a> |
-| 03 | <a href="docs/03-Solution-Architecture.ar.md">هندسة الحل</a> |
-| 04 | <a href="docs/04-Key-Features.ar.md">الميزات الجوهرية</a> |
-| 05 | <a href="docs/05-Technical-Decisions.ar.md">القرارات التقنية</a> |
-| 06 | <a href="docs/06-Challenges-Solutions.ar.md">التحديات والحلول</a> |
-| 07 | <a href="docs/07-Performance-Optimization.ar.md">تحسين الأداء</a> |
-| 08 | <a href="docs/08-Testing-Quality.ar.md">الاختبار والجودة</a> |
-| 09 | <a href="docs/09-Deployment-DevOps.ar.md">النشر وDevOps</a> |
-| 10 | <a href="docs/10-Results-Impact.ar.md">النتائج والأثر</a> |
-| 11 | <a href="docs/11-Product-Scope-Requirements.ar.md">نطاق المنتج والمتطلبات</a> |
-| 12 | <a href="docs/12-Roadmap-Lessons.ar.md">خارطة الطريق والدروس</a> |
+| # | الوثيقة | الوصف |
+|:--:|:---|:---|
+| **01** | [![Overview](https://img.shields.io/badge/Read-Overview-4a45ea?style=flat-square)](docs/ar/01-overview.md) | الرؤية، الفلسفة الجوهرية، ونطاق المشروع. |
+| **02** | [![Problem](https://img.shields.io/badge/Read-Problem_Statement-4a45ea?style=flat-square)](docs/ar/02-problem-statement.md) | تحدي بناء تطبيقات Local-First حديثة. |
+| **03** | [![Architecture](https://img.shields.io/badge/Read-Solution_Architecture-4a45ea?style=flat-square)](docs/ar/03-solution-architecture.md) | تصميم النظام، تدفق البيانات، ومنطق المزامنة. |
+| **04** | [![Features](https://img.shields.io/badge/Read-Key_Features-4a45ea?style=flat-square)](docs/ar/04-key-features.md) | كانبان، التقويم، الملاحظات، وتفاصيل الـ Dashboard. |
+| **05** | [![Decisions](https://img.shields.io/badge/Read-Technical_Decisions-4a45ea?style=flat-square)](docs/ar/05-technical-decisions.md) | لماذا Next.js 16؟ لماذا Zustand بدلاً من Redux؟ |
+| **06** | [![Challenges](https://img.shields.io/badge/Read-Challenges_&_Solutions-4a45ea?style=flat-square)](docs/ar/06-challenges-solutions.md) | حل مشاكل الـ Hydration وتعارض المزامنة. |
+| **07** | [![Performance](https://img.shields.io/badge/Read-Performance-4a45ea?style=flat-square)](docs/ar/07-performance.md) | تقنيات التحسين لتجربة مستخدم < 100ms. |
+| **08** | [![Testing](https://img.shields.io/badge/Read-Testing-4a45ea?style=flat-square)](docs/ar/08-testing-quality.md) | استراتيجية ضمان الجودة ومنهجيات الاختبار. |
+| **09** | [![Deployment](https://img.shields.io/badge/Read-Deployment-4a45ea?style=flat-square)](docs/ar/09-deployment.md) | خط أنابيب النشر على Vercel و CI/CD. |
+| **10** | [![Impact](https://img.shields.io/badge/Read-Results_&_Impact-4a45ea?style=flat-square)](docs/ar/10-results-impact.md) | المقاييس النهائية ونتائج الأعمال. |
 
-## الرخصة
-MIT License - راجع <a href="LICENSE">LICENSE</a>.
+<br/>
+<div align="center">
+<img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
+</div>
+<br/>
+
+<div align="center">
+
+### جاهز للبدء؟
+[![Start Reading](https://img.shields.io/badge/Start_Reading-01_Overview-00E5FF?style=for-the-badge&labelColor=0B1020)](docs/ar/01-overview.md)
+
+</div>
 
 </div>

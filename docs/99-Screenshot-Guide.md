@@ -1,60 +1,82 @@
 # 📸 Cinematic Screenshot Guide
 
-This guide ensures that all visual assets in the FlowShan Case Study maintain a consistent, high-end "Cinematic" aesthetic.
+This guide defines the required visual assets to complete the FlowShan "Premium" Case Study.
+We need a full matrix of screenshots to support **Bilingual (EN/AR)** and **Themed (Dark/Light)** documentation.
 
-## 📐 Window Setup
+## 📂 File Naming Convention
 
-Before capturing any screenshot, ensure your browser window is set to exactly **1920x1080**.
+Please save all assets in `assets/screenshots/` using this strict pattern:
+`[component-name].[lang].[theme].png`
 
-- **MacOS**: Use `Cmd+Shift+4` then `Space` to capture a specific window, or use a tool like **Cleanshot X**.
-- **Windows**: Use **Snip & Sketch** or **ShareX**.
-- **Browser**: Chrome DevTools -> Toggle Device Toolbar -> Responsive -> 1920 x 1080.
-
-## 🎨 Theme Configuration
-
-Ensure the application is in:
-1. **Dark Mode** (Default).
-2. **English Language** (unless specifically capturing RTL layout).
-3. **No Red Badge Notifications** (unless highlighting notifications).
-
-## 🖼️ Required Shots
-
-### 1. The Hero Dashboard (Bento Grid)
-- **Route**: `/en/dashboard`
-- **State**: Populated overviews. Ensure at least:
-  - 3 Active Tasks
-  - 1 Upcoming Deadline
-  - 2 Recent Projects
-- **Focus**: The entire Bento Grid layout without scrolling.
-
-### 2. The Kanban Board (Drag Action)
-- **Route**: `/en/dashboard/tasks`
-- **Action**: Click and hold a task card to trigger the "Lift" animation (glass shadow).
-- **Tool**: You may need a delayed timer on your screenshot tool to capture the drag state.
-
-### 3. Interactive Calendar (Heatmap)
-- **Route**: `/en/dashboard/calendar`
-- **State**: Ensure multiple days have colored dots (Green for low, Red for urgent).
-- **Focus**: The monthly grid view.
-
-### 4. Cinematic Notes (Transition)
-- **Route**: `/en/dashboard/notes`
-- **Action**: Click a note to expand it. Screenshot the *mid-transition* or the final *Editor View*.
-- **Focus**: The side-by-side layout of List + Editor.
-
-### 5. Mobile Responsiveness
-- **Device**: iPhone 14 Pro / Pixel 7 (390px width).
-- **Route**: `/en/dashboard`
-- **Focus**: The stacked Bento Grid and the Bottom Navigation Bar.
-
-## 💾 Saving Assets
-
-Save all screenshots in `assets/screenshots/` with the naming convention:
+### 1. English (Default) - Dark Mode
+*Used in standard English READMEs.*
 - `dashboard-hero.png`
-- `kanban-drag.png`
+- `kanban-board.png`
 - `calendar-heatmap.png`
 - `notes-editor.png`
-- `mobile-dashboard.png`
 
-**Format**: PNG (High Quality).
-**Compression**: Run through [TinyPNG](https://tinypng.com) before committing.
+### 2. Arabic (RTL) - Dark Mode
+*Used in Arabic READMEs.*
+- `dashboard-hero.ar.png`
+- `kanban-board.ar.png`
+- `calendar-heatmap.ar.png`
+- `notes-editor.ar.png`
+
+### 3. Light Mode Variants (Optional but Recommended)
+*Used for specific "Theme Toggle" showcases.*
+- `dashboard-hero.light.png`
+- `dashboard-hero.ar.light.png`
+
+---
+
+## 🖼️ The Shot List (Required)
+
+### 1. Dashboard Hero (`dashboard-hero`)
+**Goal:** Show the "Command Center" feel.
+- **Route:** `/dashboard`
+- **Data:**
+  - "Good Morning, [Name]" greeting.
+  - 3-4 active tasks in the Bento Grid.
+  - Activity Heatmap populated.
+- **Arabic Nuance:** Ensure the layout is flipped (Sidebar on right).
+
+### 2. Kanban Board (`kanban-board`)
+**Goal:** Show "Fluidity".
+- **Route:** `/dashboard/tasks`
+- **Action:** **Drag a card** halfway between "Todo" and "In Progress".
+- **Visual:** The card should be slightly rotated or lifted (if using dnd-kit overlay style).
+- **Arabic Nuance:** Columns should be ordered Right-to-Left (Todo -> In Progress -> Done).
+
+### 3. Interactive Calendar (`calendar-heatmap`)
+**Goal:** Show "Density".
+- **Route:** `/dashboard/calendar`
+- **Data:** A month view with multiple colored dots (priorities).
+- **Action:** Hover over a specific day to show the task summary popover.
+
+### 4. Notes Editor (`notes-editor`)
+**Goal:** Show "Focus".
+- **Route:** `/dashboard/notes`
+- **Visual:** Split view (List | Editor).
+- **Content:** A note with **Bold**, *Italic*, and a Checklist.
+
+### 5. Performance Score (`performance-lighthouse`)
+**Goal:** Show "Speed".
+- **Tool:** Chrome DevTools -> Lighthouse.
+- **Result:** Four "100" green circles.
+- **Filename:** `performance-lighthouse.png` (Universal, no language variant needed).
+
+---
+
+## 📐 Technical Specs
+
+1.  **Resolution:** `1920x1080` (Standard Full HD).
+2.  **Browser:** Chrome (Hide Bookmarks Bar).
+3.  **Zoom:** 100% (or 110% if text looks too small).
+4.  **Compression:** Run all PNGs through [TinyPNG](https://tinypng.com) before committing.
+
+## 💡 Pro Tip for "Dummy" Data
+If you don't have real data:
+1.  Open **Redux Javascript Console** (or just edit DOM).
+2.  Change "Task ID 123" to "Deploy Production Server".
+3.  Change "Task ID 124" to "Review Q3 Roadmap".
+4.  Make it look **professional**, not "test task 1".
