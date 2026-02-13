@@ -27,6 +27,10 @@ Most productivity apps suffer from two extremes:
 
 **FlowShan aims for the sweet spot: Sub-100ms interaction speed with a Netflix-grade visual experience.**
 
+<div align="center">
+  <img src="../assets/screenshots/landing-hero.webp" width="80%" alt="Landing Page"/>
+</div>
+
 <br/>
 
 ## 💡 Core Philosophy
@@ -39,6 +43,13 @@ User experience isn't just about usability; it's about *feeling*.
 - **Glassmorphism:** Real-time background blurs.
 - **Micro-interactions:** Smooth Framer Motion transitions.
 - **Sound Design:** 900ms toast notifications that feel snappy.
+
+<div align="center">
+  <img src="../assets/screenshots/dashboard-dark.webp" width="45%" alt="Dashboard Dark"/>
+  <img src="../assets/screenshots/dashboard-light.webp" width="45%" alt="Dashboard Light"/>
+  <br/>
+  <em>Dual Mode: System-preference detection with zero hydration mismatch.</em>
+</div>
 
 ### 3. Data Ownership
 Your data lives on your device first. We use a hybrid sync engine that respects user privacy and data sovereignty.

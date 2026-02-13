@@ -49,7 +49,11 @@ useTaskStore.setState(state => ({
 **Solution: Logical Properties & Radix UI**
 1.  Replaced all `left/right` CSS with `start/end`.
 2.  Used `Radix UI` primitives which have built-in RTL awareness for popover positioning.
-3.  **Code Evidence:** `src/components/ui/dialog.tsx` uses `DialogPrimitive.Content` which handles the layout flip automatically.
+3.  **Advanced Matrix Inversion:** For drag-and-drop (`dnd-kit`), we wrote a modifier that intercepts the transform matrix `x = isRTL ? -x : x` at runtime.
+
+<div align="center">
+  <img src="../assets/screenshots/rtl-projects.webp" width="80%" alt="RTL Support"/>
+</div>
 
 <br/>
 
@@ -62,6 +66,28 @@ We wrapped date-sensitive parts in a `<ClientOnly>` component that delays render
 // src/components/client-only.tsx
 if (!hasMounted) return <Skeleton className="h-4 w-20" />;
 return children;
+```
+
+<br/>
+
+## 4. Theme Hydration (The Anti-Flash)
+**Challenge:** SSR sends HTML. Browser paints white background. JavaScript loads, checks `localStorage`, sees "Dark Mode", and paints black. Result: A blinding white flash.
+
+**Solution: Blocking Script Injection**
+We inject a tiny script into the `<head>` that runs *before* the body paints. It reads storage and adds the `dark` class to `<html>` synchronously.
+
+```tsx
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      try {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch (_) {}
+    `,
+  }}
+/>
 ```
 
 <br/>

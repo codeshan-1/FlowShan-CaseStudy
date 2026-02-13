@@ -24,7 +24,7 @@
 | Component | Technology | Why? |
 |:---|:---|:---|
 | **Frontend/API** | **Vercel** | Zero-config deployments for Next.js with global CDN. |
-| **Database** | **Neon (PostgreSQL)** | Serverless Postgres that scales with traffic. |
+| **Database** | **Neon (PostgreSQL)** | Serverless Postgres that sleeps when idle (saves cost) and wakes in 300ms. |
 | **Object Storage** | **Cloudinary** | Automatic image optimization for user avatars. |
 | **Auth** | **Google OAuth** | Managed identity provider for security. |
 

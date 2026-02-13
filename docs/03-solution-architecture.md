@@ -33,6 +33,15 @@ FlowShan isn't just a Next.js app; it's a **distributed state system**. We archi
 *   **Role:** Acts as the Single Source of Truth for the UI.
 *   **Logic:** Optimistically applies changes before network requests.
 
+### 2.5. Middleware Layer (The Guard)
+*   **Tech:** Next.js Middleware + Jose (JWT).
+*   **Role:** Security at the Edge.
+*   **Function:** Intercepts every request to inject `tenant_id` into the database context, simulating Row-Level Security (RLS) within the application logic.
+
+<div align="center">
+  <img src="../assets/banners/middleware-security.png" width="80%" alt="Middleware Security"/>
+</div>
+
 ### 3. Sync Layer (The "Bridge")
 *   **Tech:** Custom `SyncService`, `use-tasks.ts`.
 *   **Role:** Debounces user input and orchestrates API calls.

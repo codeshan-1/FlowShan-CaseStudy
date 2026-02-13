@@ -29,7 +29,7 @@ We didn’t just want a board; we wanted a **fluid workspace**.
 - **Tech:** `@dnd-kit/core` + custom collision detection.
 
 <div align="center">
-  <img src="../../assets/screenshots/kanban-board.png" width="80%" alt="Kanban Board"/>
+  <img src="../assets/screenshots/kanban-board.webp" width="80%" alt="Kanban Board"/>
 </div>
 
 <br/>
@@ -43,7 +43,7 @@ A calendar that acts as a command center.
 - **Code:** `src/components/calendar/interactive-calendar.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/calendar-heatmap.png" width="80%" alt="Calendar"/>
+  <img src="../assets/screenshots/calendar-view.webp" width="80%" alt="Calendar"/>
 </div>
 
 <br/>
@@ -57,7 +57,7 @@ A distraction-free writing environment.
 - **Code:** `src/components/notes/editor.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/notes-editor.png" width="80%" alt="Notes"/>
+  <img src="../assets/screenshots/notes-editor.webp" width="80%" alt="Notes"/>
 </div>
 
 <br/>
@@ -71,7 +71,7 @@ The single pane of glass for your productivity.
 - **Code:** `src/app/[locale]/(platform)/dashboard/page.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/dashboard-hero.png" width="80%" alt="Dashboard"/>
+  <img src="../assets/screenshots/dashboard-dark.webp" width="80%" alt="Dashboard"/>
 </div>
 
 <br/>
@@ -83,6 +83,33 @@ User errors are inevitable, so we built a **non-destructive** deletion flow.
   - **5-Second Window:** An interactive "Undo" toast appears immediately after deletion.
   - **One-Click Restore:** Clicking "Undo" triggers the `restoreTask` logic, bringing the item back with no page refresh.
 - **Tech:** `sonner` for Toasts + `restoreTask` store action.
+- **Evidence:**
+
+<div align="center">
+  <img src="../assets/banners/soft-delete-timeline.png" width="80%" alt="Soft Delete Flow"/>
+</div>
+
+<br/>
+
+## 6. 🔗 Ephemeral Sharing Links
+Share progress without forcing clients to create an account.
+- **Features:**
+  - **Cryptographic Tokens:** Generate unique, expiring links per project.
+  - **Scope Enforcement:** Middleware intercepts these requests and enforces `READ-ONLY` access at the edge.
+  - **Client View:** A simplified, read-only interface for stakeholders.
+
+<br/>
+
+## 7. 🔔 Distributed Notification System
+Alerts that arrive reliably without blocking the UI thread.
+- **Features:**
+  - **Decoupled Dispatcher:** Notifications are pushed to a background queue, not sent during the HTTP request.
+  - **Multi-Channel:** Supports Email (Resend) and Telegram bots simultaneously.
+  - **Smart Batching:** Grouping notifications to prevent spamming users.
+
+<div align="center">
+  <img src="../assets/screenshots/notifications-settings.webp" width="80%" alt="Notifications"/>
+</div>
 
 <br/>
 <div align="center">
