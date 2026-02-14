@@ -22,7 +22,7 @@
 
 <br/>
 
-![FlowShan Banner](assets/banners/main-hero.ar.png)
+![FlowShan Banner](assets/banners/main-hero.webp)
 
 <br/>
 
@@ -65,10 +65,10 @@
 ## 📸 معرض الصور
 
 <div align="center">
-  <img src="assets/screenshots/dashboard-hero.ar.png" width="48%" alt="Dashboard"/>
-  <img src="assets/screenshots/kanban-board.ar.png" width="48%" alt="Kanban Board"/>
-  <img src="assets/screenshots/calendar-heatmap.ar.png" width="48%" alt="Calendar"/>
-  <img src="assets/screenshots/notes-editor.ar.png" width="48%" alt="Notes Editor"/>
+  <img src="assets/screenshots/dashboard-hero.webp" width="48%" alt="Dashboard"/>
+  <img src="assets/screenshots/kanban-board.webp" width="48%" alt="Kanban Board"/>
+  <img src="assets/screenshots/dashboard-dark.webp" width="48%" alt="Calendar"/>
+  <img src="assets/screenshots/notes-editor.webp" width="48%" alt="Notes Editor"/>
 </div>
 
 <br/>
@@ -85,7 +85,7 @@
 3.  **حل التعارض:** (Last-write-wins) مع واجهة متفائلة.
 
 <div align="center">
-  <img src="assets/banners/system-diagram.ar.png" width="80%" alt="System Architecture"/>
+  <img src="assets/banners/system-diagram.png" width="80%" alt="System Architecture"/>
 </div>
 
 <br/>

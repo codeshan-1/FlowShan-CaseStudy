@@ -31,7 +31,7 @@
 - **التقنية:** `@dnd-kit/core` + كشف تصادم مخصص (custom collision).
 
 <div align="center">
-  <img src="../../assets/screenshots/kanban-board.ar.png" width="80%" alt="Kanban Board"/>
+  <img src="../../assets/screenshots/kanban-board.webp" width="80%" alt="Kanban Board"/>
 </div>
 
 <br/>
@@ -45,7 +45,7 @@
 - **الكود:** `src/components/calendar/interactive-calendar.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/calendar-heatmap.ar.png" width="80%" alt="Calendar"/>
+  <img src="../../assets/screenshots/calendar-view.webp" width="80%" alt="Calendar"/>
 </div>
 
 <br/>
@@ -59,7 +59,7 @@
 - **الكود:** `src/components/notes/editor.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/notes-editor.ar.png" width="80%" alt="Notes"/>
+  <img src="../../assets/screenshots/notes-editor.png" width="80%" alt="Notes"/>
 </div>
 
 <br/>
@@ -73,7 +73,7 @@
 - **الكود:** `src/app/[locale]/(platform)/dashboard/page.tsx`
 
 <div align="center">
-  <img src="../../assets/screenshots/dashboard-hero.ar.png" width="80%" alt="Dashboard"/>
+  <img src="../../assets/screenshots/dashboard-dark.webp" width="80%" alt="Dashboard"/>
 </div>
 
 <br/>

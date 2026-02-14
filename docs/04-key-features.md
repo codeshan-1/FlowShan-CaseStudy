@@ -57,7 +57,7 @@ A distraction-free writing environment.
 - **Code:** `src/components/notes/editor.tsx`
 
 <div align="center">
-  <img src="../assets/screenshots/notes-editor.webp" width="80%" alt="Notes"/>
+  <img src="../assets/screenshots/notes-editor.png" width="80%" alt="Notes"/>
 </div>
 
 <br/>

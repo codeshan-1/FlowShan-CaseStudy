@@ -22,7 +22,7 @@
 
 <br/>
 
-![FlowShan Banner](assets/banners/main-hero.png)
+![FlowShan Banner](assets/banners/main-hero.webp)
 
 <br/>
 
@@ -63,9 +63,9 @@ This case study dissects the architecture, challenges, and technical decisions b
 ## 📸 Visual Showcase
 
 <div align="center">
-  <img src="assets/screenshots/dashboard-hero.png" width="48%" alt="Dashboard"/>
-  <img src="assets/screenshots/kanban-board.png" width="48%" alt="Kanban Board"/>
-  <img src="assets/screenshots/calendar-heatmap.png" width="48%" alt="Calendar"/>
+  <img src="assets/screenshots/dashboard-hero.webp" width="48%" alt="Dashboard"/>
+  <img src="assets/screenshots/kanban-board.webp" width="48%" alt="Kanban Board"/>
+  <img src="assets/screenshots/dashboard-dark.webp" width="48%" alt="Calendar"/>
   <img src="assets/screenshots/notes-editor.png" width="48%" alt="Notes Editor"/>
 </div>
 

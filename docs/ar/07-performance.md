@@ -64,7 +64,8 @@ const groupedTasks = useMemo(() => {
 حققنا درجات مثالية من خلال تحسين LCP (عرض العناصر) و CLS (تغيرات التخطيط).
 
 <div align="center">
-  <img src="../../assets/banners/performance-lighthouse.png" width="80%" alt="Lighthouse Score"/>
+  <img src="../../assets/screenshots/performance-lighthouse.png" width="45%" alt="Lighthouse Score"/>
+  <img src="../../assets/screenshots/performance-lighthouse-mobile.png" width="45%" alt="Lighthouse Score Mobile"/>
 </div>
 
 <br/>

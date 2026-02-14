@@ -59,7 +59,8 @@ We rigorously monitor our import cost.
 We achieved perfect scores by optimizing LCP (element paints) and CLS (layout shifts).
 
 <div align="center">
-  <img src="../../assets/banners/performance-lighthouse.png" width="80%" alt="Lighthouse Score"/>
+  <img src="../assets/screenshots/performance-lighthouse.png" width="45%" alt="Lighthouse Score"/>
+  <img src="../assets/screenshots/performance-lighthouse-mobile.png" width="45%" alt="Lighthouse Score Mobile"/>
 </div>
 
 <br/>

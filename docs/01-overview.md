@@ -28,7 +28,7 @@ Most productivity apps suffer from two extremes:
 **FlowShan aims for the sweet spot: Sub-100ms interaction speed with a Netflix-grade visual experience.**
 
 <div align="center">
-  <img src="../assets/screenshots/landing-hero.webp" width="80%" alt="Landing Page"/>
+  <img src="../assets/banners/main-hero.webp" width="80%" alt="Landing Page"/>
 </div>
 
 <br/>
