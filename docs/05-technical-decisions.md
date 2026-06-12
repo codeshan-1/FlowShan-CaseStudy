@@ -58,6 +58,14 @@ Most apps force sign-in. We built a **"Guest ID"** system:
 **Trade-off:** High complexity in the Auth API (`src/app/api/auth/...`) in exchange for zero-friction onboarding.
 
 <br/>
+
+## 5. Bundler/Compiler: Webpack vs. Turbopack (Next.js 16)
+**Decision:** We chose **Turbopack** for rapid development and production builds.
+
+*   **The Challenge:** Turbopack (written in Rust) is extremely fast, but it historically had issues resolving symlinked packages inside `pnpm` workspace structures, especially when project paths contained spaces or emojis (e.g. `/01_DEV_CORE 🚀/Projects 📁/`).
+*   **The Resolution:** Instead of falling back to Webpack, we configured `node-linker=hoisted` in `.npmrc` to flatten the dependency tree. This resolved Turbopack's native resolver issues, allowing us to leverage **instant hot-module reloading** in development and compile production builds under Turbopack in under **38 seconds**!
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

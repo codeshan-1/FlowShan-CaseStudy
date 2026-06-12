@@ -47,11 +47,11 @@ This case study dissects the architecture, challenges, and technical decisions b
 
 | Metric | Details |
 |:---|:---|
-| **Core Stack** | Next.js 16.1 (App Router), React 19, TypeScript |
+| **Core Stack** | Next.js 16.2 (App Router / Turbopack), React 19, TypeScript |
 | **Styling** | Tailwind CSS v4, Framer Motion (Cinematic UX) |
 | **State** | Zustand (7 Stores), Local-First Architecture |
 | **Backend** | Server Actions, Prisma ORM, PostgreSQL |
-| **Components** | 60+ Reusable UI Components |
+| **Components** | 65+ Reusable UI Components |
 | **Performance** | < 100ms Interaction Latency |
 
 <br/>

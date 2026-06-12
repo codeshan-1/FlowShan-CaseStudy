@@ -112,6 +112,26 @@ Alerts that arrive reliably without blocking the UI thread.
 </div>
 
 <br/>
+
+## 8. 🚀 Smart Onboarding Wizard
+To reduce user friction and align the platform with the user's specific context, we introduced a personalized onboarding flow.
+- **Features:**
+  - **Persona Selector:** Select between Freelancer, Student, Manager, or Custom workflows.
+  - **Dynamic Module Defaults:** Automatically pre-selects recommended workspace modules based on the selected persona.
+  - **Glassmorphism Overlay:** Smooth, full-screen slide transitions utilizing `framer-motion` for a premium welcoming experience.
+- **Code:** `src/components/onboarding/onboarding-wizard.tsx`
+
+<br/>
+
+## 9. ⚙️ Adaptive Dashboard & Custom Workspace
+Instead of showing empty widgets or static tables, the workspace is fully customizable.
+- **Features:**
+  - **Module Toggling:** Turn on/off individual workspace sections (Clients, Projects, Tasks, Notes, Calendar) on the fly.
+  - **Grid Layout Adaptation:** Columns resize and widgets expand dynamically to hide disabled modules (preventing empty grid spots).
+  - **Workspace Settings Section:** A dedicated tab inside the settings panel to change personas and toggle active modules at runtime.
+- **Code:** `src/app/[locale]/(platform)/settings/page.tsx` + `src/app/[locale]/(platform)/dashboard/page.tsx`
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

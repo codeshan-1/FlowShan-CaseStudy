@@ -49,11 +49,11 @@
 
 | المؤشر | التفاصيل |
 |:---|:---|
-| **التقنية الأساسية** | Next.js 16.1 (App Router), React 19, TypeScript |
+| **التقنية الأساسية** | Next.js 16.2 (App Router / Turbopack), React 19, TypeScript |
 | **التصميم** | Tailwind CSS v4, Framer Motion (تأثيرات سينمائية) |
 | **إدارة الحالة** | Zustand (7 Stores), Local-First Architecture |
 | **الخلفية** | Server Actions, Prisma ORM, PostgreSQL |
-| **المكونات** | 60+ مكون واجهة قابل لإعادة الاستخدام |
+| **المكونات** | 65+ مكون واجهة قابل لإعادة الاستخدام |
 | **الأداء** | زمن استجابة أقل من 100ms |
 
 <br/>
