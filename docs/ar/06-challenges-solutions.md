@@ -67,6 +67,95 @@ return children;
 ```
 
 <br/>
+## 4. تروية السمة ومنع الوميض (Theme Hydration - The Anti-Flash)
+**التحدي:** يرسل السيرفر ملف HTML وتظهر خلفية بيضاء لثوانٍ معدودة، ثم يعمل ملف الجافا سكريبت ويقرأ الـ `localStorage` ويحوّل الخلفية لسوداء (مما يسبب وميضاً أبيض مزعجاً للعين).
+**الحل: حقن كود حظر Paint**
+قمنا بحقن سكربت صغير جداً في وسم الـ `<head>` يعمل قبل قيام المتصفح برسم الواجهة (Paint)، ليقرأ إعداد المظهر من الـ storage مباشرة ويضيف كلاس `dark` للـ `<html>` تزامناً.
+```tsx
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      try {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch (_) {}
+    `,
+  }}
+/>
+```
+
+<br/>
+
+## 5. تعارض السحب والإفلات مع سكرول الموبايل (Touch DnD & Scrolling Conflicts)
+**التحدي:** على شاشات اللمس، كان سحب كروت المهام في لوحة الـ Kanban أو إعادة ترتيب العناصر يعترض إيماءات التمرير العمودي للمتصفح، مما جعل عملية التنقل والسكرول مستحيلة على الموبايل لعدم تفريق المتصفح بين السكرول والسحب.
+**الحل: قيود التفعيل لـ Touch Sensor**
+قمنا بتطبيق مستشعر اللمس `TouchSensor` من حزمة `@dnd-kit/core` مع قيود تفعيل دقيقة تفرّق بدقة بين السكرول والسحب:
+- **المهلة (Delay):** مهلة ضغط مستمر قدرها 250 ملي ثانية لتفعيل السحب.
+- **التسامح (Tolerance):** نسبة حركة لا تتعدى 5 بكسل قبل انتهاء المهلة.
+```typescript
+const sensors = useSensors(
+  useSensor(PointerSensor),
+  useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+  useSensor(TouchSensor, {
+    activationConstraint: { delay: 250, tolerance: 5 }
+  })
+);
+```
+**النتيجة:** لا يتفعل السحب إلا عندما يضغط المستخدم عمداً على الكارت لمدة 250 ملي ثانية ثابتة، بينما الضربات السريعة العادية تسمح بالسكرول بمنتهى السلاسة.
+
+<br/>
+
+## 6. قيود التشغيل التلقائي للصوت (iOS Autoplay Block)
+**التحدي:** تمنع المتصفحات الحديثة (خاصة Safari على iOS) الـ Web Audio API من تشغيل أي نغمات صوتية بدون تفاعل مباشر من المستخدم، مما تسبب في صمت نغمة الإنجاز وظهور تحذيرات في الكونسول.
+**الحل: مستمع تفاعلي عام لمرة واحدة**
+قمنا ببناء روتين تهيئة يقوم باستئناف عمل الـ `AudioContext` تلقائياً فور أول تفاعل نقر أو لمس للمستند من قبل المستخدم:
+```typescript
+export const initAudioOnInteraction = () => {
+  if (typeof window === "undefined") return;
+  const resumeAudio = () => {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+    if (audioContext && audioContext.state === "suspended") {
+      audioContext.resume();
+    }
+    document.removeEventListener("touchstart", resumeAudio);
+    document.removeEventListener("click", resumeAudio);
+  };
+  document.addEventListener("touchstart", resumeAudio, { passive: true });
+  document.addEventListener("click", resumeAudio, { passive: true });
+};
+```
+**النتيجة:** يتم فتح قفل الصوت للمتصفح بشكل شفاف تماماً مع أول نقرة، مما يسمح بتشغيل نغمة الإنجاز C6-E6 فوراً ودون تأخير بمجرد إكمال أي مهمة.
+
+<br/>
+
+## 7. تضارب شبكة CSS Grid والـ AnimatePresence
+**التحدي:** عند تخصيص وتفعيل الوحدات ديناميكياً، تسبب إخفاء أو إظهار الكروت داخل شبكة CSS واحدة (`grid-cols-2`) مغلفة بـ `AnimatePresence mode="popLayout"` في مشاكل بمواقع الخلايا التلقائية. المكونات المغادرة تظل في ال DOM لتشغيل حركتها، مما يتسبب في حجز مكان وهمي وانتقال الكروت النشطة لأعمدة غير صحيحة مسبباً فراغات عملاقة.
+**الحل: أعمدة مستقلة مكدسة**
+قمنا بإعادة هيكلة الشبكة إلى عمودين مستقلين تماماً، كل عمود يضم عناصر مكدسة رأسياً ومغلفة بـ `AnimatePresence` الخاصة به:
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* العمود الأول */}
+  <div className="space-y-6 flex flex-col">
+    <AnimatePresence mode="popLayout">
+      {modules.tasks && <TasksWidget />}
+      {modules.calendar && <CalendarWidget />}
+    </AnimatePresence>
+  </div>
+  {/* العمود الثاني */}
+  <div className="space-y-6 flex flex-col">
+    <AnimatePresence mode="popLayout">
+      {modules.projects && <ProjectsWidget />}
+      {modules.notes && <NotesWidget />}
+    </AnimatePresence>
+  </div>
+</div>
+```
+**النتيجة:** عند تبديل أي موديول، تتأثر فقط عناصر عموده المحلي مما يسمح للمكونات بالانزلاق لأعلى بسلاسة دون التسبب في أي فراغات أو خلايا مشوهة.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

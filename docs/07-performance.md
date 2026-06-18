@@ -64,6 +64,14 @@ We achieved perfect scores by optimizing LCP (element paints) and CLS (layout sh
 </div>
 
 <br/>
+
+## 4. Next.js 16.2 Turbopack Build Optimizer
+To keep the developer feedback loop fast and compilation efficient, we transitioned the project to use Next.js's native **Turbopack** compiler.
+- **Features:**
+  - **Dynamic Imports Optimization:** Auto-optimizes module imports, reducing client-side hot-reloads under 100ms.
+  - **Efficient Asset Bundling:** Produces highly optimized production bundle sizes, compiling the entire 65+ component suite in ~30s.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

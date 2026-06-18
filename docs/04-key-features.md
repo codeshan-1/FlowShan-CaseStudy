@@ -132,6 +132,29 @@ Instead of showing empty widgets or static tables, the workspace is fully custom
 - **Code:** `src/app/[locale]/(platform)/settings/page.tsx` + `src/app/[locale]/(platform)/dashboard/page.tsx`
 
 <br/>
+
+## 10. 🔊 Interactive Sound Design
+To enhance the tactile feel and visual reward of completing tasks, we integrated a custom audio chime.
+- **Features:**
+  - **Premium Audio Feedback:** Plays a pleasant 2-note C6→E6 arpeggio chime on task completions (inspired by modern productivity tools like TickTick).
+  - **Debounce Cooldown:** Implements a strict 500ms debounce guard to prevent overlapping sound waves when completing multiple items in rapid succession.
+  - **Autoplay Compliance:** Solves standard browser block policies on iOS and desktop with an automatic one-time user interaction listener that resumes the `AudioContext`.
+  - **State Settings Persistence:** Integrated into database schema (`soundEnabled`) to persist user settings across sessions and workspaces.
+- **Code:** `src/lib/audio.ts` & `src/app/api/user/profile/route.ts`
+
+<br/>
+
+## 11. 📊 Interactive Workspace Playground (Landing Page)
+Before users commit to registering or starting a guest session, the landing page provides a fully interactive, client-side preview of the dashboard.
+- **Features:**
+  - **Module Toggles Preview:** Lets visitors customize the mockup workspace (Tasks, Projects, Calendar, Notes) dynamically.
+  - **Framer Motion Layouts:** Removing or adding modules triggers smooth `LayoutGroup` repositioning of the remaining dashboard columns.
+  - **Direct Sound & Particles Sandbox:** Clicking mock tasks triggers the C6-E6 completion sound and a burst of 12 colorful sparkling particles flying outward from the click origin.
+  - **Progress Synced Ring:** Synced to mock task completion ratios, rendering from 0% to 100% dynamically.
+  - **Mac OS Topbar Controls:** Fused LTR layout matching macOS windows style.
+- **Code:** `src/components/home/hero-playground.tsx`
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

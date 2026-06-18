@@ -53,8 +53,9 @@
 | **التصميم** | Tailwind CSS v4, Framer Motion (تأثيرات سينمائية) |
 | **إدارة الحالة** | Zustand (7 Stores), Local-First Architecture |
 | **الخلفية** | Server Actions, Prisma ORM, PostgreSQL |
-| **المكونات** | 65+ مكون واجهة قابل لإعادة الاستخدام |
-| **الأداء** | زمن استجابة أقل من 100ms |
+| **المكونات** | 70+ مكون واجهة قابل لإعادة الاستخدام |
+| **التفاعل** | نظام صوت Web Audio (نغمة إنجاز C6-E6)، تأثيرات جسيمات تفاعلية، مستشعرات اللمس |
+| **الأداء** | زمن استجابة أقل من 100ms، بناء مجمّع Turbopack خلال ~30 ثانية |
 
 <br/>
 <div align="center">
@@ -103,10 +104,10 @@
 | **01** | [![Overview](https://img.shields.io/badge/Read-Overview-4a45ea?style=flat-square)](docs/ar/01-overview.md) | الرؤية، الفلسفة الجوهرية، ونطاق المشروع. |
 | **02** | [![Problem](https://img.shields.io/badge/Read-Problem_Statement-4a45ea?style=flat-square)](docs/ar/02-problem-statement.md) | تحدي بناء تطبيقات Local-First حديثة. |
 | **03** | [![Architecture](https://img.shields.io/badge/Read-Solution_Architecture-4a45ea?style=flat-square)](docs/ar/03-solution-architecture.md) | تصميم النظام، تدفق البيانات، ومنطق المزامنة. |
-| **04** | [![Features](https://img.shields.io/badge/Read-Key_Features-4a45ea?style=flat-square)](docs/ar/04-key-features.md) | كانبان، التقويم، الملاحظات، وتفاصيل الـ Dashboard. |
+| **04** | [![Features](https://img.shields.io/badge/Read-Key_Features-4a45ea?style=flat-square)](docs/ar/04-key-features.md) | كانبان، التقويم، الملاحظات، تصميم الصوت، واللوحة التفاعلية بصفحة الهبوط. |
 | **05** | [![Decisions](https://img.shields.io/badge/Read-Technical_Decisions-4a45ea?style=flat-square)](docs/ar/05-technical-decisions.md) | لماذا Next.js 16؟ لماذا Zustand بدلاً من Redux؟ |
-| **06** | [![Challenges](https://img.shields.io/badge/Read-Challenges_&_Solutions-4a45ea?style=flat-square)](docs/ar/06-challenges-solutions.md) | حل مشاكل الـ Hydration وتعارض المزامنة. |
-| **07** | [![Performance](https://img.shields.io/badge/Read-Performance-4a45ea?style=flat-square)](docs/ar/07-performance.md) | تقنيات التحسين لتجربة مستخدم < 100ms. |
+| **06** | [![Challenges](https://img.shields.io/badge/Read-Challenges_&_Solutions-4a45ea?style=flat-square)](docs/ar/06-challenges-solutions.md) | حل مشاكل الـ Hydration، تضارب السحب على الموبايل، والتشغيل التلقائي للصوت. |
+| **07** | [![Performance](https://img.shields.io/badge/Read-Performance-4a45ea?style=flat-square)](docs/ar/07-performance.md) | تقنيات تحسين الأداء ومقاييس بناء مجمّع Turbopack الفائقة. |
 | **08** | [![Testing](https://img.shields.io/badge/Read-Testing-4a45ea?style=flat-square)](docs/ar/08-testing-quality.md) | استراتيجية ضمان الجودة ومنهجيات الاختبار. |
 | **09** | [![Deployment](https://img.shields.io/badge/Read-Deployment-4a45ea?style=flat-square)](docs/ar/09-deployment.md) | خط أنابيب النشر على Vercel و CI/CD. |
 | **10** | [![Impact](https://img.shields.io/badge/Read-Results_&_Impact-4a45ea?style=flat-square)](docs/ar/10-results-impact.md) | المقاييس النهائية ونتائج الأعمال. |

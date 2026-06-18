@@ -91,6 +91,80 @@ We inject a tiny script into the `<head>` that runs *before* the body paints. It
 ```
 
 <br/>
+
+## 5. Mobile Touch DnD & Scrolling Conflicts
+**Challenge:** On touch screens, dragging cards inside the Kanban board or sorting lists intercepted the default vertical scroll gesture of mobile browsers. Swiping down on a card dragged it instead of scrolling the page, resulting in frustrating UX and trapped mobile views.
+
+**Solution: Activation Constraints (Touch Sensor)**
+We implemented `@dnd-kit/core`'s `TouchSensor` with precise constraints to differentiate between scrolling and dragging:
+- **Delay:** 250ms press-and-hold activation constraint.
+- **Tolerance:** 5px move tolerance before activation.
+```typescript
+const sensors = useSensors(
+  useSensor(PointerSensor),
+  useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates }),
+  useSensor(TouchSensor, {
+    activationConstraint: { delay: 250, tolerance: 5 }
+  })
+);
+```
+**Result:** Dragging only triggers if a user deliberately presses and holds a card for 250ms without moving more than 5px. Normal quick swipes scroll the page cleanly.
+
+<br/>
+
+## 6. Browser Autoplay Audio Constraints (iOS)
+**Challenge:** Modern browsers (specifically Safari on iOS) block Web Audio API's `AudioContext` from playing sounds automatically without a direct user interaction. If a user completes a task, no sound plays, and warnings clutter the console.
+
+**Solution: Global Interaction Listener**
+We built a lazy initialization routine that resumes the blocked audio context upon the very first click or touch on the document:
+```typescript
+export const initAudioOnInteraction = () => {
+  if (typeof window === "undefined") return;
+  const resumeAudio = () => {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+    if (audioContext && audioContext.state === "suspended") {
+      audioContext.resume();
+    }
+    // Remove listeners once successfully initialized
+    document.removeEventListener("touchstart", resumeAudio);
+    document.removeEventListener("click", resumeAudio);
+  };
+  document.addEventListener("touchstart", resumeAudio, { passive: true });
+  document.addEventListener("click", resumeAudio, { passive: true });
+};
+```
+**Result:** The audio context is transparently unlocked on the user's first click, enabling immediate, lag-free C6-E6 chime playbacks when checking off tasks.
+
+<br/>
+
+## 7. CSS Grid Cell Offsets with AnimatePresence
+**Challenge:** When modules were dynamically toggled on/off, rendering card components inside a single CSS Grid (`grid-cols-2`) wrapped by `AnimatePresence mode="popLayout"` caused auto-placement issues. Exiting components remained in the DOM for exit animations, occupying hidden slots and shifting other elements to incorrect row cells, leaving large empty spaces.
+
+**Solution: Independent Column Stacks**
+We refactored the layout grid into two separate column containers. Each column contains its own layout stack wrapped in `AnimatePresence`.
+```tsx
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Column 1 */}
+  <div className="space-y-6 flex flex-col">
+    <AnimatePresence mode="popLayout">
+      {modules.tasks && <TasksWidget />}
+      {modules.calendar && <CalendarWidget />}
+    </AnimatePresence>
+  </div>
+  {/* Column 2 */}
+  <div className="space-y-6 flex flex-col">
+    <AnimatePresence mode="popLayout">
+      {modules.projects && <ProjectsWidget />}
+      {modules.notes && <NotesWidget />}
+    </AnimatePresence>
+  </div>
+</div>
+```
+**Result:** Toggling any module adjusts only its local column stack height, allowing remaining items to smoothly slide up within their column via Framer Motion layouts, eliminating grid layout bugs.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>

@@ -69,6 +69,14 @@ const groupedTasks = useMemo(() => {
 </div>
 
 <br/>
+
+## 4. مجمّع بناء Next.js 16.2 (Turbopack Build Optimizer)
+للحفاظ على سرعة حلقة تطوير الكود وتجميع التطبيق بكفاءة، قمنا بنقل المشروع لاستخدام المترجم الأصلي **Turbopack** من Next.js.
+- **الميزات:**
+  - **تحسين استيراد المكونات ديناميكياً:** تحسين استيراد الحزم يقلل من وقت التحديث الساخن (Hot-Reload) لجهة العميل إلى أقل من 100 ملي ثانية.
+  - **تجميع ذكي للملفات:** إنتاج حزم بناء إنتاجية محسنة وصغيرة الحجم، مع تجميع كامل التطبيق المكون من 65+ واجهة ومكون في حوالي 30 ثانية.
+
+<br/>
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png"/>
 </div>
